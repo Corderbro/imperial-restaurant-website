@@ -10,7 +10,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/20250621_210927.jpg" 
+            src="/impNeonSign.jpg" 
             alt="The Imperial Restaurant" 
             fill
             className="object-cover"
