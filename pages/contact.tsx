@@ -106,7 +106,7 @@ export default function Contact() {
       
       <div className="border-t pt-6">
         <h2 className="text-xl font-semibold mb-4">Send us a Message</h2>
-        <form action="https://formspree.io/f/xrgjabrg" method="POST" className="space-y-4 max-w-md">
+        <form action="https://formspree.io/f/mwpqylva" method="POST" className="space-y-4 max-w-md">
           <div>
             <input 
               type="text" 
