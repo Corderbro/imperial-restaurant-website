@@ -106,11 +106,37 @@ export default function Contact() {
       
       <div className="border-t pt-6">
         <h2 className="text-xl font-semibold mb-4">Send us a Message</h2>
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" className="space-y-4 max-w-md">
-          <input type="text" name="name" placeholder="Your Name" className="w-full border p-2 rounded" required />
-          <input type="email" name="email" placeholder="Your Email" className="w-full border p-2 rounded" required />
-          <textarea name="message" placeholder="Your Message" className="w-full border p-2 rounded h-32" required />
-          <button type="submit" className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">
+        <form action="https://formspree.io/f/xrgjabrg" method="POST" className="space-y-4 max-w-md">
+          <div>
+            <input 
+              type="text" 
+              name="name" 
+              placeholder="Your Name" 
+              className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-neon-red focus:border-transparent transition-all" 
+              required 
+            />
+          </div>
+          <div>
+            <input 
+              type="email" 
+              name="email" 
+              placeholder="Your Email" 
+              className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-neon-red focus:border-transparent transition-all" 
+              required 
+            />
+          </div>
+          <div>
+            <textarea 
+              name="message" 
+              placeholder="Your Message" 
+              className="w-full border border-gray-300 p-3 rounded-lg h-32 focus:ring-2 focus:ring-neon-red focus:border-transparent transition-all resize-none" 
+              required 
+            />
+          </div>
+          <button 
+            type="submit" 
+            className="btn-primary w-full"
+          >
             Send Message
           </button>
         </form>

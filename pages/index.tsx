@@ -47,53 +47,7 @@ export default function Home() {
         <div className="absolute bottom-40 left-20 w-2 h-2 bg-gold rounded-full opacity-60 float" style={{animationDelay: '2s'}}></div>
       </section>
 
-      {/* Introduction Section */}
-      <section className="py-20 px-4 gradient-warm">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="slide-in-left">
-              <h2 className="heading-lg text-gradient mb-6">
-                Where History Meets Hospitality
-              </h2>
-              <p className="body-text text-warm-gray mb-6">
-                The Imperial opened its doors in December 2013, transforming a long-abandoned 1920s service station 
-                into a vibrant neighborhood gastropub. The name "Imperial" was inspired by a Chevrolet Imperial car, 
-                paying homage to the building's automotive heritage.
-              </p>
-              <p className="body-text text-warm-gray">
-                Today, we're a funky, come-hither bar with a cozy, friendly atmosphere perfect for the Oakhurst neighborhood. 
-                Our sprawling patio is dog-friendly, making us a favorite spot for pet owners and their furry friends.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 slide-in-right">
-              <div className="feature-card text-center hover-lift">
-                <div className="text-4xl font-bold text-neon-red mb-3 neon-pulse">16</div>
-                <h3 className="font-semibold mb-2 text-dark">Craft Taps</h3>
-                <p className="text-sm text-warm-gray">Rotating selection of Georgia craft beers and classics</p>
-              </div>
-              
-              <div className="feature-card text-center hover-lift">
-                <div className="text-4xl font-bold text-neon-yellow mb-3 neon-pulse">1920s</div>
-                <h3 className="font-semibold mb-2 text-dark">Historic Charm</h3>
-                <p className="text-sm text-warm-gray">Converted service station with exposed brick and vintage signage</p>
-              </div>
-              
-              <div className="feature-card text-center hover-lift">
-                <div className="text-4xl font-bold text-gold mb-3 neon-pulse">Dog</div>
-                <h3 className="font-semibold mb-2 text-dark">Friendly</h3>
-                <p className="text-sm text-warm-gray">Sprawling patio welcomes your furry friends</p>
-              </div>
-              
-              <div className="feature-card text-center hover-lift">
-                <div className="text-4xl font-bold text-brick mb-3 neon-pulse">Community</div>
-                <h3 className="font-semibold mb-2 text-dark">Hub</h3>
-                <p className="text-sm text-warm-gray">Trivia nights, live music, and neighborhood events</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Photo Gallery Section */}
       <section className="py-20 px-4 bg-soft-gray">
