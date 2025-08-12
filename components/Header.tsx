@@ -8,14 +8,14 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-95 backdrop-blur-sm border-b border-soft-gray shadow-sm">
       <div className="mx-auto max-w-7xl px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="flex items-center hover:opacity-90 transition-opacity">
-          <div className="bg-white p-2 rounded-lg shadow-sm">
+        <Link href="/" className="flex items-center hover:opacity-90 transition-all duration-300 hover:scale-105">
+          <div className="bg-white p-3 rounded-lg shadow-md border border-gray-100">
             <Image 
               src="/ImperialLogo.png" 
               alt="The Imperial" 
               width={200} 
               height={60} 
-              className="h-12 w-auto"
+              className="h-14 w-auto"
               priority
             />
           </div>
@@ -23,17 +23,21 @@ export default function Header() {
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-8">
-          <Link href="/menu" className="text-dark hover:text-neon-red transition-colors font-medium uppercase tracking-wider text-sm">
+          <Link href="/menu" className="text-dark hover:text-neon-red transition-all duration-300 font-medium uppercase tracking-wider text-sm relative group">
             Menu
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-red transition-all duration-300 group-hover:w-full"></span>
           </Link>
-          <Link href="/story" className="text-dark hover:text-neon-red transition-colors font-medium uppercase tracking-wider text-sm">
+          <Link href="/story" className="text-dark hover:text-neon-red transition-all duration-300 font-medium uppercase tracking-wider text-sm relative group">
             Story & Events
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-red transition-all duration-300 group-hover:w-full"></span>
           </Link>
-          <Link href="/about" className="text-dark hover:text-neon-red transition-colors font-medium uppercase tracking-wider text-sm">
+          <Link href="/about" className="text-dark hover:text-neon-red transition-all duration-300 font-medium uppercase tracking-wider text-sm relative group">
             About
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-red transition-all duration-300 group-hover:w-full"></span>
           </Link>
-          <Link href="/contact" className="text-dark hover:text-neon-red transition-colors font-medium uppercase tracking-wider text-sm">
+          <Link href="/contact" className="text-dark hover:text-neon-red transition-all duration-300 font-medium uppercase tracking-wider text-sm relative group">
             Contact & Hours
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-red transition-all duration-300 group-hover:w-full"></span>
           </Link>
         </nav>
 

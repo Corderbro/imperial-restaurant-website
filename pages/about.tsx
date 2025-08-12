@@ -3,7 +3,8 @@ import Layout from '../components/Layout'
 export default function About() {
   return (
     <Layout>
-      <h1 className="text-3xl font-bold mb-6">About The Imperial</h1>
+      <div className="pt-8">
+        <h1 className="text-3xl font-bold mb-6">About The Imperial</h1>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         <div>
@@ -95,6 +96,7 @@ export default function About() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </Layout>
   )

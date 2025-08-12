@@ -35,7 +35,7 @@ export default function MenuPage() {
   
   return (
     <Layout>
-      <div className="text-center mb-8">
+      <div className="text-center mb-8 pt-8">
         <h1 className="text-4xl font-bold mb-4">Our Menu</h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
           Pure pub grub with Southern comfort and typical bar food with a twist. 

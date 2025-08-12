@@ -22,7 +22,7 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold mb-2">Connect</h3>
             <div className="space-y-1">
-              <a href="http://imperialdecatur.com/" className="block hover:underline" target="_blank" rel="noopener noreferrer">
+              <a href="https://imperial-oakhurst.vercel.app/" className="block hover:underline" target="_blank" rel="noopener noreferrer">
                 Website
               </a>
               <a href="https://www.facebook.com/ImperialDecatur/" className="block hover:underline" target="_blank" rel="noopener noreferrer">

@@ -152,7 +152,7 @@ html, body, #__next {
 
 /* Enhanced button styles */
 .btn-primary {
-  background: linear-gradient(135deg, var(--imperial-neon-red) 0%, var(--imperial-brick) 100%);
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
   color: white;
   padding: 14px 28px;
   font-weight: 600;
@@ -168,7 +168,7 @@ html, body, #__next {
   text-align: center;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+  box-shadow: 0 4px 15px rgba(44, 62, 80, 0.4);
 }
 
 .btn-primary::before {
@@ -188,7 +188,7 @@ html, body, #__next {
 
 .btn-primary:hover {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+  box-shadow: 0 8px 25px rgba(44, 62, 80, 0.5);
 }
 
 .btn-secondary {

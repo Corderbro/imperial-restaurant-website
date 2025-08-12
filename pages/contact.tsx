@@ -3,7 +3,8 @@ import Layout from '../components/Layout'
 export default function Contact() {
   return (
     <Layout>
-      <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
+      <div className="pt-8">
+        <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         <div>
@@ -17,8 +18,8 @@ export default function Contact() {
             (404) 464-5698</p>
             
             <p><strong>Website:</strong><br />
-            <a href="http://imperialdecatur.com/" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
-              imperialdecatur.com
+            <a href="https://imperial-oakhurst.vercel.app/" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
+              imperial-oakhurst.vercel.app
             </a></p>
             
             <p><strong>Social Media:</strong><br />
@@ -140,6 +141,7 @@ export default function Contact() {
             Send Message
           </button>
         </form>
+      </div>
       </div>
     </Layout>
   )

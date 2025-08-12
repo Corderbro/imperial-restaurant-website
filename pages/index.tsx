@@ -7,23 +7,30 @@ export default function Home() {
     <Layout>
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
+        {/* Background Video */}
         <div className="absolute inset-0 z-0">
-          <Image 
-            src="/impNeonSign.jpg" 
-            alt="The Imperial Restaurant" 
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/impNeonFlicker.mp4" type="video/mp4" />
+            {/* Fallback image in case video doesn't load */}
+            <Image 
+              src="/impNeonSign.jpg" 
+              alt="The Imperial Restaurant" 
+              fill
+              className="object-cover"
+              priority
+            />
+          </video>
+          <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         </div>
         
         {/* Hero Content */}
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="heading-xl text-neon-yellow mb-6 font-bold tracking-wide float">
-            THE IMPERIAL
-          </h1>
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-auto mb-20">
           <p className="text-2xl font-light text-white mb-4 italic slide-in-left">
             Your New Old Favorite
           </p>
@@ -248,6 +255,95 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Facebook Posts Section */}
+      <section className="py-20 px-4 bg-soft-gray">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="heading-lg text-dark mb-4 text-gradient">Latest from Facebook</h2>
+            <p className="body-text text-warm-gray">
+              Stay connected with our latest updates, events, and community happenings.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Facebook Post Cards */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover-lift">
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-neon-red rounded-full flex items-center justify-center mr-3">
+                    <span className="text-white font-bold text-sm">I</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-dark">The Imperial</h4>
+                    <p className="text-xs text-warm-gray">2 hours ago</p>
+                  </div>
+                </div>
+                <p className="text-warm-gray mb-4">
+                  "Monday Trivia with Robert Holland tonight at 7pm! Test your knowledge and enjoy our craft beer selection. See you there! 🧠🍺"
+                </p>
+                <div className="flex items-center justify-between text-sm text-warm-gray">
+                  <span>👍 28 likes</span>
+                  <span>💬 5 comments</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover-lift">
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-neon-red rounded-full flex items-center justify-center mr-3">
+                    <span className="text-white font-bold text-sm">I</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-dark">The Imperial</h4>
+                    <p className="text-xs text-warm-gray">1 day ago</p>
+                  </div>
+                </div>
+                <p className="text-warm-gray mb-4">
+                  "New local craft beer rotation this weekend! Featuring SweetWater and Monday Night Brewing. Perfect for our dog-friendly patio! 🐕🍺"
+                </p>
+                <div className="flex items-center justify-between text-sm text-warm-gray">
+                  <span>👍 42 likes</span>
+                  <span>💬 8 comments</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover-lift">
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-neon-red rounded-full flex items-center justify-center mr-3">
+                    <span className="text-white font-bold text-sm">I</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-dark">The Imperial</h4>
+                    <p className="text-xs text-warm-gray">3 days ago</p>
+                  </div>
+                </div>
+                <p className="text-warm-gray mb-4">
+                  "Sunday Game Day specials! Half-price appetizers during the game. Our Chicken Fried Steak and Cuban sandwich are fan favorites! 🏈🍽️"
+                </p>
+                <div className="flex items-center justify-between text-sm text-warm-gray">
+                  <span>👍 56 likes</span>
+                  <span>💬 12 comments</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-center mt-8">
+            <a 
+              href="https://www.facebook.com/ImperialDecatur/" 
+              className="btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              See More on Facebook
+            </a>
           </div>
         </div>
       </section>

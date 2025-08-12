@@ -26,8 +26,9 @@ export default function Story() {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative py-20 px-4">
+      <div className="pt-8">
+        {/* Hero Section */}
+        <section className="relative py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="heading-xl text-dark mb-6 text-gradient float">Our Story & Events</h1>
           <p className="body-text text-warm-gray max-w-3xl mx-auto slide-in-left">
@@ -169,6 +170,7 @@ export default function Story() {
           </div>
         </div>
       </section>
+      </div>
     </Layout>
   )
 }
