@@ -18,6 +18,7 @@ const menuItems = [
   { category: 'Soups and Salads', name: 'Caesar Salad (V)', desc: 'Small $5 / Large $7', price: 5.00 },
   { category: 'Soups and Salads', name: 'Lemony Greens', desc: 'Spring Mix, Toasted Chickpeas, Cherry Toms, Blue Crumbles and Lemon Vinaigrette.', price: 12.00 },
   { category: 'Soups and Salads', name: 'Charred Broccoli Salad (V)', desc: 'Small $9 / Large $11', price: 9.00 },
+  { category: 'Soups and Salads', name: 'Add Grilled Chicken', desc: 'Add to any salad', price: 5.00 },
 
   // Sandwiches
   { category: 'Sandwiches', name: 'Bowie Q', desc: 'Pulled pork from our own smoker.', price: 11.00 },
@@ -252,13 +253,7 @@ export default function MenuPage() {
         </div>
       </div>
 
-      {/* Salad Add-ons */}
-      <div className="bg-gradient-to-r from-green-50 to-blue-50 p-8 rounded-lg border border-green-200 mb-8">
-        <h3 className="text-2xl font-bold mb-4 text-center">Salad Add-ons</h3>
-        <div className="text-center">
-          <p className="text-lg font-semibold text-gray-800">Add grilled chicken to a salad + $5.00</p>
-        </div>
-      </div>
+
 
       {/* Disclaimer */}
       <div className="bg-gray-100 p-6 rounded-lg border border-gray-300">
