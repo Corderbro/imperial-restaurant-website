@@ -38,6 +38,10 @@ const menuItems = [
   { category: 'Burgers & Dogs*', name: 'Plain Dog', desc: 'Ask what you can add.', price: 8.00 },
   { category: 'Burgers & Dogs*', name: 'The Carpetbagger (dog!)', desc: 'With Must., Rel., Onions, Tomato, Peppers, Celery Salt', price: 10.00 },
   { category: 'Burgers & Dogs*', name: 'Southern Dog', desc: 'With Pimento Cheese & Bacon', price: 11.00 },
+  { category: 'Burgers & Dogs*', name: 'Make it Impossible', desc: 'Add to any burger', price: 4.00 },
+  { category: 'Burgers & Dogs*', name: 'Add Cheese', desc: 'Add to any burger', price: 2.50 },
+  { category: 'Burgers & Dogs*', name: 'Add a Fried Egg', desc: 'Add to any burger', price: 2.50 },
+  { category: 'Burgers & Dogs*', name: 'Add Avocado', desc: 'Add to any burger', price: 2.50 },
 
   // Other Entrees
   { category: 'Other Entrees', name: 'Chicken Tenders', desc: 'Comes with a side \'n\' a sauce.', price: 15.00 },
@@ -162,16 +166,20 @@ export default function MenuPage() {
       </div>
       
       {/* Food Menu */}
-      {foodCategories.map(category => (
-        <div key={category} className="mb-12">
-          <div className="border-b-2 border-red-600 pb-2 mb-6">
-            <h2 className="text-3xl font-bold text-gray-800">{category}</h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {menuItems
-              .filter(item => item.category === category)
-              .map((item, i) => (
+      {foodCategories.map(category => {
+        const categoryItems = menuItems.filter(item => item.category === category);
+        const mainItems = categoryItems.filter(item => !item.name.includes('Add') && !item.name.includes('Make it'));
+        const addOnItems = categoryItems.filter(item => item.name.includes('Add') || item.name.includes('Make it'));
+        
+        return (
+          <div key={category} className="mb-12">
+            <div className="border-b-2 border-red-600 pb-2 mb-6">
+              <h2 className="text-3xl font-bold text-gray-800">{category}</h2>
+            </div>
+            
+            {/* Main Menu Items */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              {mainItems.map((item, i) => (
                 <div key={i} className="bg-white border border-gray-200 p-6 rounded-lg hover:shadow-lg transition-all duration-200 hover:border-red-300">
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="text-xl font-semibold text-gray-800">{item.name}</h3>
@@ -180,9 +188,28 @@ export default function MenuPage() {
                   <p className="text-gray-600 text-sm italic">{item.desc}</p>
                 </div>
               ))}
+            </div>
+            
+            {/* Add-on Items */}
+            {addOnItems.length > 0 && (
+              <div className="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-lg border border-red-200">
+                <h3 className="text-lg font-bold mb-4 text-center text-red-700">Add-ons</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {addOnItems.map((item, i) => (
+                    <div key={i} className="bg-white p-4 rounded-lg shadow-sm border border-red-100">
+                      <div className="flex justify-between items-center">
+                        <h4 className="font-semibold text-gray-800">{item.name}</h4>
+                        <span className="text-red-600 font-bold">+${item.price.toFixed(2)}</span>
+                      </div>
+                      <p className="text-sm text-gray-600 mt-1">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
-        </div>
-      ))}
+        );
+      })}
 
       {/* Beverage Menu */}
       {beverageCategories.map(category => (
@@ -230,28 +257,7 @@ export default function MenuPage() {
         </div>
       ))}
       
-      {/* Add-ons Section */}
-      <div className="bg-gradient-to-r from-red-50 to-orange-50 p-8 rounded-lg border border-red-200 mb-8">
-        <h3 className="text-2xl font-bold mb-4 text-center">Burger Add-ons</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-white p-4 rounded-lg shadow-sm">
-            <h4 className="font-semibold mb-2">Make it Impossible</h4>
-            <p className="text-sm text-gray-600">+ $4.00</p>
-          </div>
-          <div className="bg-white p-4 rounded-lg shadow-sm">
-            <h4 className="font-semibold mb-2">Add Cheese</h4>
-            <p className="text-sm text-gray-600">+ $2.50</p>
-          </div>
-          <div className="bg-white p-4 rounded-lg shadow-sm">
-            <h4 className="font-semibold mb-2">Add a Fried Egg</h4>
-            <p className="text-sm text-gray-600">+ $2.50</p>
-          </div>
-          <div className="bg-white p-4 rounded-lg shadow-sm">
-            <h4 className="font-semibold mb-2">Add Avocado</h4>
-            <p className="text-sm text-gray-600">+ $2.50</p>
-          </div>
-        </div>
-      </div>
+
 
 
 
