@@ -6,21 +6,27 @@ export default function Story() {
   const events = [
     {
       day: "Monday",
-      title: "Robert Holland Trivia",
-      time: "7:00 PM",
+      title: "Trivia Night",
+      time: "8:00 PM",
       color: "text-neon-red"
     },
     {
-      day: "Friday",
-      title: "Weekend Vibes",
-      time: "Extended Hours",
+      day: "Tuesday",
+      title: "Trivia Night",
+      time: "8:00 PM",
       color: "text-neon-yellow"
     },
     {
-      day: "Sunday",
-      title: "Game Day Specials",
-      time: "All Day",
+      day: "Happy Hour",
+      title: "Drink Specials",
+      time: "4-6 PM & 10-12 AM",
       color: "text-gold"
+    },
+    {
+      day: "Packers Games",
+      title: "Game Day",
+      time: "When they're on!",
+      color: "text-green-600"
     }
   ]
 

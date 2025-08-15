@@ -45,7 +45,7 @@ export default function Header() {
         <div className="md:hidden">
           <button 
             aria-label="Open menu" 
-            className="text-dark p-2 hover:text-neon-red transition-colors"
+            className="text-dark p-3 hover:text-neon-red transition-colors rounded-lg hover:bg-gray-100 min-h-[44px] min-w-[44px] flex items-center justify-center"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -61,32 +61,32 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-soft-gray shadow-lg">
-          <nav className="px-4 py-6 space-y-4">
+        <div className="md:hidden bg-white border-t border-soft-gray shadow-lg animate-in slide-in-from-top-2 duration-300">
+          <nav className="px-4 py-6 space-y-2">
             <Link 
               href="/menu" 
-              className="block text-dark hover:text-neon-red transition-colors font-medium uppercase tracking-wider text-sm py-2"
+              className="block text-dark hover:text-neon-red transition-colors font-medium uppercase tracking-wider text-sm py-4 px-4 rounded-lg hover:bg-gray-50 min-h-[44px] flex items-center"
               onClick={() => setIsMenuOpen(false)}
             >
               Menu
             </Link>
             <Link 
               href="/story" 
-              className="block text-dark hover:text-neon-red transition-colors font-medium uppercase tracking-wider text-sm py-2"
+              className="block text-dark hover:text-neon-red transition-colors font-medium uppercase tracking-wider text-sm py-4 px-4 rounded-lg hover:bg-gray-50 min-h-[44px] flex items-center"
               onClick={() => setIsMenuOpen(false)}
             >
               Story & Events
             </Link>
             <Link 
               href="/about" 
-              className="block text-dark hover:text-neon-red transition-colors font-medium uppercase tracking-wider text-sm py-2"
+              className="block text-dark hover:text-neon-red transition-colors font-medium uppercase tracking-wider text-sm py-4 px-4 rounded-lg hover:bg-gray-50 min-h-[44px] flex items-center"
               onClick={() => setIsMenuOpen(false)}
             >
               About
             </Link>
             <Link 
               href="/contact" 
-              className="block text-dark hover:text-neon-red transition-colors font-medium uppercase tracking-wider text-sm py-2"
+              className="block text-dark hover:text-neon-red transition-colors font-medium uppercase tracking-wider text-sm py-4 px-4 rounded-lg hover:bg-gray-50 min-h-[44px] flex items-center"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact & Hours

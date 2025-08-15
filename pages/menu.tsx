@@ -14,7 +14,7 @@ const menuItems = [
   { category: 'Appetizers', name: 'The Big Ass Pretzel (V)', desc: 'Add cheese +2', price: 8.00 },
 
   // Soups and Salads
-  { category: 'Soups and Salads', name: 'Chili: Beef or Veggie', desc: 'Small $7 / Large $6', price: 7.00 },
+  { category: 'Soups and Salads', name: 'Chili: Beef or Veggie', desc: 'Small $6 / Large $7', price: 6.00 },
   { category: 'Soups and Salads', name: 'Caesar Salad (V)', desc: 'Small $5 / Large $7', price: 5.00 },
   { category: 'Soups and Salads', name: 'Lemony Greens', desc: 'Spring Mix, Toasted Chickpeas, Cherry Toms, Blue Crumbles and Lemon Vinaigrette.', price: 12.00 },
   { category: 'Soups and Salads', name: 'Charred Broccoli Salad (V)', desc: 'Small $9 / Large $11', price: 9.00 },
