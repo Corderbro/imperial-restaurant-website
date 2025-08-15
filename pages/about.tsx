@@ -19,8 +19,7 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           <div className="space-y-6">
             <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
-              <h2 className="text-2xl font-bold mb-4 text-red-600 flex items-center">
-                <span className="mr-3">🏛️</span>
+              <h2 className="text-2xl font-bold mb-4 text-red-600">
                 Our Story
               </h2>
               <p className="text-gray-700 mb-4 leading-relaxed">
@@ -37,8 +36,7 @@ export default function About() {
           
           <div className="space-y-6">
             <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
-              <h2 className="text-2xl font-bold mb-4 text-red-600 flex items-center">
-                <span className="mr-3">🌟</span>
+              <h2 className="text-2xl font-bold mb-4 text-red-600">
                 Atmosphere
               </h2>
               <p className="text-gray-700 mb-4 leading-relaxed">
@@ -58,9 +56,8 @@ export default function About() {
           <h2 className="text-3xl font-bold mb-8 text-center">What We Offer</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-gradient-to-br from-red-50 to-orange-50 p-6 rounded-xl border border-red-200 hover:shadow-lg transition-all duration-300 group">
-              <div className="text-center">
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🍽️</div>
-                <h3 className="font-bold text-lg mb-3 text-red-700">Southern Comfort Food</h3>
+                              <div className="text-center">
+                  <h3 className="font-bold text-lg mb-3 text-red-700">Southern Comfort Food</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
                   Pure pub grub with Southern comfort and typical bar food with a twist. 
                   Our menu features witty descriptions and creative takes on classic dishes.
@@ -69,9 +66,8 @@ export default function About() {
             </div>
             
             <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-200 hover:shadow-lg transition-all duration-300 group">
-              <div className="text-center">
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🍺</div>
-                <h3 className="font-bold text-lg mb-3 text-blue-700">Craft Beer Selection</h3>
+                              <div className="text-center">
+                  <h3 className="font-bold text-lg mb-3 text-blue-700">Craft Beer Selection</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
                   16 rotating taps featuring Georgia craft beers and standards like Guinness and Miller Lite. 
                   We're active on Untappd for beer enthusiasts.
@@ -80,9 +76,8 @@ export default function About() {
             </div>
             
             <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border border-green-200 hover:shadow-lg transition-all duration-300 group">
-              <div className="text-center">
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🎉</div>
-                <h3 className="font-bold text-lg mb-3 text-green-700">Community Events</h3>
+                              <div className="text-center">
+                  <h3 className="font-bold text-lg mb-3 text-green-700">Community Events</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
                   Trivia nights, live music, and participation in Oakhurst Porchfest and local Mardi Gras celebrations. 
                   We're proud to be part of the neighborhood community.
@@ -97,25 +92,21 @@ export default function About() {
           <h2 className="text-3xl font-bold mb-8 text-center">Events & Specials</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-200 text-center hover:shadow-lg transition-all duration-300">
-              <div className="text-3xl mb-3">🎯</div>
               <h3 className="font-bold text-purple-700 mb-2">Monday Trivia</h3>
               <p className="text-sm text-gray-600">8:00 PM</p>
             </div>
             
             <div className="bg-gradient-to-br from-yellow-50 to-orange-50 p-6 rounded-xl border border-yellow-200 text-center hover:shadow-lg transition-all duration-300">
-              <div className="text-3xl mb-3">🎯</div>
               <h3 className="font-bold text-yellow-700 mb-2">Tuesday Trivia</h3>
               <p className="text-sm text-gray-600">8:00 PM</p>
             </div>
             
             <div className="bg-gradient-to-br from-red-50 to-pink-50 p-6 rounded-xl border border-red-200 text-center hover:shadow-lg transition-all duration-300">
-              <div className="text-3xl mb-3">🍻</div>
               <h3 className="font-bold text-red-700 mb-2">Happy Hour</h3>
               <p className="text-sm text-gray-600">4-6 PM & 10-12 AM</p>
             </div>
             
             <div className="bg-gradient-to-br from-green-50 to-blue-50 p-6 rounded-xl border border-green-200 text-center hover:shadow-lg transition-all duration-300">
-              <div className="text-3xl mb-3">🏈</div>
               <h3 className="font-bold text-green-700 mb-2">Packers Games</h3>
               <p className="text-sm text-gray-600">When they're on!</p>
             </div>
@@ -127,8 +118,7 @@ export default function About() {
           <h2 className="text-3xl font-bold mb-8 text-center">Visit Us</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-xl mb-4 text-red-600 flex items-center">
-                <span className="mr-2">📍</span>
+              <h3 className="font-bold text-xl mb-4 text-red-600">
                 Location
               </h3>
               <div className="space-y-2 text-gray-700">
@@ -138,14 +128,13 @@ export default function About() {
               </div>
               <div className="mt-4">
                 <Link href="/contact" className="inline-flex items-center text-red-600 hover:text-red-700 font-medium">
-                  Get Directions →
+                  Get Directions
                 </Link>
               </div>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-xl mb-4 text-red-600 flex items-center">
-                <span className="mr-2">🕒</span>
+              <h3 className="font-bold text-xl mb-4 text-red-600">
                 Hours
               </h3>
               <div className="space-y-3 text-sm">
