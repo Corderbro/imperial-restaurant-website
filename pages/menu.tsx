@@ -146,24 +146,7 @@ export default function MenuPage() {
         </p>
       </div>
 
-      {/* Special Items */}
-      <div className="bg-gradient-to-r from-red-50 to-orange-50 p-8 rounded-lg border border-red-200 mb-12">
-        <h2 className="text-2xl font-bold mb-6 text-center">This Week's Specials</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-lg shadow-sm text-center">
-            <h3 className="font-bold text-lg text-red-600 mb-2">Burger Of The Week</h3>
-            <p className="text-gray-800 font-semibold">The Drunken Mushroom</p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-sm text-center">
-            <h3 className="font-bold text-lg text-red-600 mb-2">Dessert</h3>
-            <p className="text-gray-800 font-semibold">Robert's Heat-Beatin', Life-Affirmin' Key Lime Pie</p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-sm text-center">
-            <h3 className="font-bold text-lg text-red-600 mb-2">Draft Cocktail</h3>
-            <p className="text-gray-800 font-semibold">The Gin-Gin Negroni</p>
-          </div>
-        </div>
-      </div>
+      {/* Specials section removed per request */}
       
       {/* Food Menu */}
       {foodCategories.map(category => {
