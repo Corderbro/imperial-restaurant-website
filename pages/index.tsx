@@ -42,7 +42,7 @@ export default function Home() {
             <Link href="/menu" className="btn-primary shimmer">
               View Our Menu
             </Link>
-            <Link href="/story" className="btn-secondary">
+            <Link href="/story" className="btn-primary shimmer">
               See What's Happening
             </Link>
           </div>
