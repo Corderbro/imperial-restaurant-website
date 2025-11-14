@@ -1,4 +1,5 @@
 import Layout from '../components/Layout'
+import SEOHead from '../components/SEOHead'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -6,177 +7,267 @@ export default function Story() {
   const events = [
     {
       day: "Monday",
-      title: "Trivia Night",
+      title: "Robert's Trivia Night",
       time: "8:00 PM",
-      color: "text-neon-red"
+      color: "text-neon-red",
+      description: "Join Robert Holland for the best trivia night in Decatur!"
     },
     {
-      day: "Tuesday",
-      title: "Trivia Night",
+      day: "Tuesday", 
+      title: "DJ Blaq Mozart's Trivia",
       time: "8:00 PM",
-      color: "text-neon-yellow"
+      color: "text-neon-yellow",
+      description: "Friendlier...Younger? DJ Blaq Mozart brings the trivia fun"
     },
     {
       day: "Happy Hour",
-      title: "Drink Specials",
-      time: "4-6 PM & 10-12 AM",
-      color: "text-gold"
-    },
-    {
-      day: "Packers Games",
-      title: "Game Day",
-      time: "When they're on!",
-      color: "text-green-600"
+      title: "Drink and App Specials",
+      time: "Mon-Fri 4-6 PM & 10-12 AM",
+      color: "text-neon-blue",
+      description: "Great deals on craft beer, cocktails, and appetizers"
     }
   ]
 
   return (
-    <Layout>
-      <div className="pt-8">
-        {/* Hero Section */}
-        <section className="relative py-20 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="heading-xl text-dark mb-6 text-gradient float">Our Story & Events</h1>
-          <p className="body-text text-warm-gray max-w-3xl mx-auto slide-in-left">
-            From a 1920s service station to your favorite neighborhood bar.
-          </p>
-        </div>
-      </section>
-
-      {/* The Story */}
-      <section className="py-20 px-4 bg-cream">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="slide-in-left">
-              <div className="feature-card p-8 mb-8">
-                <h2 className="heading-lg text-dark mb-6 text-gradient">The Story</h2>
-                <p className="body-text text-warm-gray mb-6">
-                  The Imperial opened in December 2013, transforming a long-abandoned 1920s service station 
-                  into a vibrant neighborhood gastropub. The name was inspired by a Chevrolet Imperial car, 
-                  paying homage to the building's automotive heritage.
-                </p>
-                <p className="body-text text-warm-gray">
-                  Today, we're a funky, come-hither bar with a cozy atmosphere perfect for the Oakhurst neighborhood. 
-                  Our sprawling patio is dog-friendly, making us a favorite spot for pet owners and their furry friends.
-                </p>
-              </div>
+    <>
+      <SEOHead 
+        title="Story & Events | The Imperial Decatur"
+        description="Join us for Robert Holland Trivia every Monday and Tuesday at 8pm! Learn about The Imperial's history as a converted 1920s service station in Decatur, GA."
+        canonical="/story"
+        pageType="about"
+      />
+      <Layout>
+        <div className="pt-8">
+          {/* Hero Section */}
+          <section className="py-24 px-4 bg-white">
+            <div className="max-w-6xl mx-auto text-center">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-dark tracking-tight letter-spacing-tight">
+                Our Story & Events
+              </h1>
+              <p className="text-xl text-warm-gray max-w-3xl mx-auto font-light leading-relaxed">
+                From a 1920s service station to your favorite neighborhood bar.
+              </p>
             </div>
-            
-            <div className="slide-in-right">
-              <div className="relative overflow-hidden rounded-lg shadow-lg hover-lift">
-                <Image 
-                  src="/impNeonSign.jpg" 
-                  alt="The Imperial Neon Sign" 
-                  width={500} 
-                  height={400}
-                  className="w-full h-80 object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 text-white">
-                  <h3 className="font-semibold text-lg">Vintage Charm</h3>
-                  <p className="text-sm opacity-90">The iconic neon sign that lights up Oakhurst</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      {/* Weekly Events */}
-      <section className="py-20 px-4 bg-soft-gray">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12 fade-in">
-            <h2 className="heading-lg text-dark mb-6 text-gradient">Weekly Events</h2>
-            <p className="body-text text-warm-gray">
-              Join us for these regular happenings.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {events.map((event, index) => (
-              <div key={index} className="feature-card text-center hover-lift" style={{animationDelay: `${index * 0.1}s`}}>
-                <div className={`font-bold text-lg mb-2 ${event.color} neon-pulse`}>{event.day}</div>
-                <h3 className="font-semibold mb-2 text-dark">{event.title}</h3>
-                <div className="text-sm text-neon-yellow font-medium">{event.time}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Community */}
-      <section className="py-20 px-4 bg-cream">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="heading-lg text-dark mb-6 text-gradient">Community</h2>
-            <p className="body-text text-warm-gray mb-8 slide-in-left">
-              We're proud to be part of the vibrant Oakhurst community, participating in events 
-              like Oakhurst Porchfest and local celebrations.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="slide-in-left">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="feature-card">
-                  <h3 className="heading-md text-neon-red mb-4">What We Offer</h3>
-                  <div className="space-y-2 text-sm text-warm-gray text-left">
-                    <div className="hover-lift p-2 rounded">• 16 craft beer taps</div>
-                    <div className="hover-lift p-2 rounded">• Southern comfort food</div>
-                    <div className="hover-lift p-2 rounded">• Dog-friendly patio</div>
-                    <div className="hover-lift p-2 rounded">• Live music</div>
-                  </div>
+          {/* The Story */}
+          <section className="py-24 px-4 bg-gray-50">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
+                  <h2 className="text-3xl font-bold mb-6 text-dark letter-spacing-tight">The Story</h2>
+                  <p className="text-gray-700 mb-6 font-light leading-relaxed">
+                    The Imperial opened in December 2013, transforming a long abandoned 1920's service station 
+                    into a vibrant neighborhood meeting spot serving first-rate food and drink.
+                  </p>
+                  <p className="text-gray-700 mb-6 font-light leading-relaxed">
+                    The name was inspired by a gloriously restored Chrysler Imperial that glided by one day and pays homage to the building's automotive heritage.
+                  </p>
+                  
+                  <h3 className="text-2xl font-bold text-neon-yellow mb-4 mt-8 letter-spacing-wide">Atmosphere</h3>
+                  <p className="text-gray-700 font-light leading-relaxed">
+                    Today we're a funky, friendly restaurant with a cozy atmosphere perfect for your casual get-togethers. Our sprawling patio is dog-friendly, making us a favorite spot for pet owners and their furry friends.
+                  </p>
                 </div>
-                <div className="feature-card">
-                  <h3 className="heading-md text-neon-yellow mb-4">Perfect For</h3>
-                  <div className="space-y-2 text-sm text-warm-gray text-left">
-                    <div className="hover-lift p-2 rounded">• Casual dining</div>
-                    <div className="hover-lift p-2 rounded">• Group gatherings</div>
-                    <div className="hover-lift p-2 rounded">• Game day viewing</div>
-                    <div className="hover-lift p-2 rounded">• Private events</div>
+                
+                <div className="relative overflow-hidden rounded-2xl shadow-xl">
+                  <Image 
+                    src="/impNeonSign.jpg" 
+                    alt="The Imperial Neon Sign" 
+                    width={500} 
+                    height={400}
+                    className="w-full h-80 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute bottom-6 left-6 text-white">
+                    <h3 className="font-bold text-xl mb-2 letter-spacing-wide">Vintage Charm</h3>
+                    <p className="text-sm opacity-90 font-light leading-relaxed">The iconic neon sign that lights up Decatur</p>
                   </div>
                 </div>
               </div>
             </div>
-            
-            <div className="slide-in-right">
-              <div className="relative overflow-hidden rounded-lg shadow-lg hover-lift">
-                <Image 
-                  src="/impPatio.jpg" 
-                  alt="The Imperial Patio" 
-                  width={500} 
-                  height={400}
-                  className="w-full h-80 object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 text-white">
-                  <h3 className="font-semibold text-lg">Dog-Friendly Patio</h3>
-                  <p className="text-sm opacity-90">Where neighbors become friends</p>
+          </section>
+
+          {/* Weekly Events */}
+          <section className="py-24 px-4 bg-white">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-dark tracking-tight letter-spacing-tight">Weekly Events</h2>
+                <p className="text-xl text-warm-gray max-w-3xl mx-auto font-light leading-relaxed">
+                  Join us for these regular happenings.
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {events.map((event, index) => (
+                  <div key={index} className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div className={`font-bold text-lg mb-3 ${event.color} letter-spacing-wide`}>{event.day}</div>
+                    <h3 className="font-bold text-xl mb-3 text-dark letter-spacing-tight">{event.title}</h3>
+                    <div className="text-sm text-neon-yellow font-semibold mb-4">{event.time}</div>
+                    <p className="text-gray-600 leading-relaxed font-light">{event.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Additional Events */}
+          <section className="py-24 px-4 bg-gray-50">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-dark tracking-tight letter-spacing-tight">More Events</h2>
+                <p className="text-xl text-warm-gray max-w-3xl mx-auto font-light leading-relaxed">
+                  Additional regular events and special occasions
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <div className="text-neon-green font-bold text-lg mb-3 letter-spacing-wide">Packers Games</div>
+                  <h3 className="font-bold text-xl mb-3 text-dark letter-spacing-tight">Game Day Specials</h3>
+                  <div className="text-sm text-neon-green font-semibold mb-4">When they're on!</div>
+                  <p className="text-gray-600 leading-relaxed font-light">
+                    Cheer on the Pack with fellow fans and drink specials. Join us for the best game day atmosphere in Decatur!
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <div className="text-neon-purple font-bold text-lg mb-3 letter-spacing-wide">Community Events</div>
+                  <h3 className="font-bold text-xl mb-3 text-dark letter-spacing-tight">Local Celebrations</h3>
+                  <div className="text-sm text-neon-purple font-semibold mb-4">Throughout the year</div>
+                  <p className="text-gray-600 leading-relaxed font-light">
+                    We participate in local celebrations and neighborhood events. Follow us on social media to stay updated!
+                  </p>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      {/* Call to Action */}
-      <section className="py-20 px-4 bg-soft-gray">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="heading-lg text-dark mb-6 text-gradient">Visit Us</h2>
-          <p className="body-text text-warm-gray mb-8 fade-in">
-            Come experience The Imperial for yourself.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/menu" className="btn-primary shimmer">
-              View Our Menu
-            </Link>
-            <Link href="/contact" className="btn-secondary">
-              Get Directions
-            </Link>
-          </div>
+          {/* Trivia Details */}
+          <section className="py-24 px-4 bg-white">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-dark tracking-tight letter-spacing-tight">
+                  Trivia Nights at The Imperial
+                </h2>
+                <p className="text-xl text-warm-gray max-w-3xl mx-auto font-light leading-relaxed">
+                  Two nights of trivia fun with Robert Holland and DJ Blaq Mozart
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="space-y-8">
+                  <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
+                    <h3 className="text-2xl font-bold mb-6 text-neon-red letter-spacing-wide">Schedule</h3>
+                    <div className="space-y-4">
+                      <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                        <span className="text-gray-700 font-medium">Robert's Trivia Night:</span>
+                        <span className="text-neon-red font-semibold">Monday 8:00 PM</span>
+                      </div>
+                      <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                        <span className="text-gray-700 font-medium">DJ Blaq Mozart's Trivia:</span>
+                        <span className="text-neon-red font-semibold">Tuesday 8:00 PM</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200 text-center">
+                  <h3 className="text-2xl font-bold mb-4 text-dark letter-spacing-tight">Ready to Test Your Knowledge?</h3>
+                  <p className="text-gray-600 mb-6 font-light leading-relaxed">
+                    Join us for the most popular trivia night in Decatur! 
+                    No reservations required - just show up and have fun.
+                  </p>
+                  <div className="space-y-4">
+                    <a 
+                      href="tel:4044645698" 
+                      className="inline-flex items-center gap-2 bg-neon-red hover:bg-neon-red-dark text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-glow-red transform hover:scale-105 active:scale-95"
+                    >
+                      📞 Call (404) 464-5698
+                    </a>
+                    <div className="text-sm text-gray-600">
+                      <p>726 W College Ave, Decatur GA 30030</p>
+                      <Link href="/contact" className="text-neon-red hover:text-neon-red-dark font-semibold">
+                        Get Directions
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Community */}
+          <section className="py-24 px-4 bg-gray-50">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-dark tracking-tight letter-spacing-tight">Community</h2>
+                <p className="text-xl text-warm-gray max-w-3xl mx-auto font-light leading-relaxed">
+                  We're proud to be part of the vibrant Decatur community, participating in events 
+                  like local celebrations and neighborhood gatherings.
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
+                  <h3 className="text-2xl font-bold text-neon-yellow mb-6 letter-spacing-wide">Perfect For</h3>
+                  <div className="space-y-3 text-gray-700">
+                    <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                      <span className="text-neon-red text-lg">🍽️</span>
+                      <span className="font-medium">Casual dining</span>
+                    </div>
+                    <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                      <span className="text-neon-red text-lg">👥</span>
+                      <span className="font-medium">Group gatherings</span>
+                    </div>
+                    <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                      <span className="text-neon-red text-lg">📺</span>
+                      <span className="font-medium">Game day viewing</span>
+                    </div>
+                    <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                      <span className="text-neon-red text-lg">🎉</span>
+                      <span className="font-medium">Private events</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="relative overflow-hidden rounded-2xl shadow-xl">
+                  <Image 
+                    src="/impPatio.jpg" 
+                    alt="The Imperial Patio" 
+                    width={500} 
+                    height={400}
+                    className="w-full h-80 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute bottom-6 left-6 text-white">
+                    <h3 className="font-bold text-xl mb-2 letter-spacing-wide">Dog-Friendly Patio</h3>
+                    <p className="text-sm opacity-90 font-light leading-relaxed">Where neighbors become friends</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Call to Action */}
+          <section className="py-24 px-4 bg-white">
+            <div className="max-w-6xl mx-auto text-center">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-dark tracking-tight letter-spacing-tight">Visit Us</h2>
+              <p className="text-xl text-warm-gray mb-12 font-light max-w-3xl mx-auto leading-relaxed">
+                Come experience The Imperial for yourself.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <Link href="/menu" className="bg-neon-red hover:bg-neon-red-dark text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-glow-red transform hover:scale-105 active:scale-95">
+                  View Our Menu
+                </Link>
+                <Link href="/contact" className="bg-transparent border-2 border-neon-blue text-neon-blue hover:bg-neon-blue hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-glow-blue transform hover:scale-105 active:scale-95">
+                  Get Directions
+                </Link>
+              </div>
+            </div>
+          </section>
         </div>
-      </section>
-      </div>
-    </Layout>
+      </Layout>
+    </>
   )
 }

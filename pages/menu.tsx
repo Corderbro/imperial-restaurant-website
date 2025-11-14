@@ -1,4 +1,5 @@
 import Layout from '../components/Layout'
+import SEOHead from '../components/SEOHead'
 
 const menuItems = [
   // Appetizers
@@ -7,17 +8,17 @@ const menuItems = [
   { category: 'Appetizers', name: 'Pimento Cheese Plate (V)', desc: 'Our own! Served with saltines. You can add celery!', price: 9.50 },
   { category: 'Appetizers', name: 'Spring Rolls', desc: '2 veg-filled, yet fried rolls. A yin-yang sorta thing.', price: 8.50 },
   { category: 'Appetizers', name: 'Pizza Rolls', desc: 'House-made, filled with ground beef, pepperoni and mozzarella. Served with marinara and ranch.', price: 11.00 },
-  { category: 'Appetizers', name: 'Cuban Rolls', desc: 'Filled with our pork, ham, pickles, mustard & mojo.', price: 11.00 },
-  { category: 'Appetizers', name: 'La Poutine de Georgia (V)', desc: 'Now with veggie gravy...but you can still add bacon!', price: 10.00 },
+  { category: 'Appetizers', name: 'Cuban Rolls', desc: 'Filled with our pulled pork, ham, pickles, mustard & mojo.', price: 11.00 },
+  { category: 'Appetizers', name: 'La Poutine de Georgia (V)', desc: 'We channel Canada to bring you Fries covered in our own Pimento Cheese and Veggie Gravy…but you can still add bacon (Not V)!', price: 10.00 },
   { category: 'Appetizers', name: 'Hummus Plate (V)', desc: 'Made right \'cheer!', price: 12.00 },
   { category: 'Appetizers', name: 'Nachos', desc: 'Chips, Cheese Sauce, LTO, Jalapeños. SC on request. Ask your server what else you can add today!', price: 12.00 },
   { category: 'Appetizers', name: 'The Big Ass Pretzel (V)', desc: 'Add cheese +2', price: 8.00 },
 
   // Soups and Salads
-  { category: 'Soups and Salads', name: 'Chili: Beef or Veggie', desc: 'Small $6 / Large $7', price: 6.00 },
+  { category: 'Soups and Salads', name: 'Chili: Beef or Veggie', desc: 'House made! Small $6 / Large $7', price: 6.00 },
   { category: 'Soups and Salads', name: 'Caesar Salad (V)', desc: 'Small $5 / Large $7', price: 5.00 },
   { category: 'Soups and Salads', name: 'Lemony Greens', desc: 'Spring Mix, Toasted Chickpeas, Cherry Toms, Blue Crumbles and Lemon Vinaigrette.', price: 12.00 },
-  { category: 'Soups and Salads', name: 'Charred Broccoli Salad (V)', desc: 'Small $9 / Large $11', price: 9.00 },
+  { category: 'Soups and Salads', name: 'Charred Broccoli Salad (V)', desc: 'Spring Mix, Charred Broccoli, Picked Beets, Dried Cranberries, Blue Cheese Crumbles, Grilled Apple slices. Small $9 / Large $11', price: 9.00 },
   { category: 'Soups and Salads', name: 'Add Grilled Chicken', desc: 'Add to any salad', price: 5.00 },
 
   // Sandwiches
@@ -29,34 +30,35 @@ const menuItems = [
   { category: 'Sandwiches', name: 'Mushroom Philly (V)', desc: 'Vegetarian Philly option', price: 12.00 },
 
   // Burgers & Dogs
-  { category: 'Burgers & Dogs*', name: 'Plain Burger*', desc: 'Classic beef burger with LTO+pickle & a side', price: 13.00 },
-  { category: 'Burgers & Dogs*', name: 'The Holland*', desc: 'With Caramelized onions', price: 14.00 },
-  { category: 'Burgers & Dogs*', name: 'Southern Living*', desc: 'With Pimento Cheese & Bacon', price: 17.00 },
-  { category: 'Burgers & Dogs*', name: 'KR\'s Psychedelic N Mexico Experience*', desc: 'With Green chilies, cheddar', price: 16.00 },
-  { category: 'Burgers & Dogs*', name: 'Buffalo Blue*', desc: 'With Buffalo Sauce & Blue Cheese', price: 16.00 },
-  { category: 'Burgers & Dogs*', name: 'The Bowie*', desc: 'With Mushrooms, Swiss & Bacon', price: 17.00 },
-  { category: 'Burgers & Dogs*', name: 'Plain Dog', desc: 'Ask what you can add.', price: 8.00 },
-  { category: 'Burgers & Dogs*', name: 'The Carpetbagger (dog!)', desc: 'With Must., Rel., Onions, Tomato, Peppers, Celery Salt', price: 10.00 },
-  { category: 'Burgers & Dogs*', name: 'Southern Dog', desc: 'With Pimento Cheese & Bacon', price: 11.00 },
-  { category: 'Burgers & Dogs*', name: 'Make it Impossible', desc: 'Add to any burger', price: 4.00 },
-  { category: 'Burgers & Dogs*', name: 'Add Cheese', desc: 'Add to any burger', price: 2.50 },
-  { category: 'Burgers & Dogs*', name: 'Add a Fried Egg', desc: 'Add to any burger', price: 2.50 },
-  { category: 'Burgers & Dogs*', name: 'Add Avocado', desc: 'Add to any burger', price: 2.50 },
+  { category: 'Burgers & Dogs* (All burgers come with L,T.O + Pickle)', name: 'Plain Burger*', desc: 'So lonely. Yes, we\'re judging.', price: 13.00 },
+  { category: 'Burgers & Dogs* (All burgers come with L,T.O + Pickle)', name: 'The Holland*', desc: 'Adds Caramelized Onions. And that\'s the way Robert likes it.', price: 14.00 },
+  { category: 'Burgers & Dogs* (All burgers come with L,T.O + Pickle)', name: 'Southern Living*', desc: 'With Pimento Cheese & Bacon', price: 17.00 },
+  { category: 'Burgers & Dogs* (All burgers come with L,T.O + Pickle)', name: 'KR\'s Psychedelic N Mexico Experience*', desc: 'With Green chilies, cheddar', price: 16.00 },
+  { category: 'Burgers & Dogs* (All burgers come with L,T.O + Pickle)', name: 'Buffalo Blue*', desc: 'With Buffalo Sauce & Blue Cheese', price: 16.00 },
+  { category: 'Burgers & Dogs* (All burgers come with L,T.O + Pickle)', name: 'The Bowie*', desc: 'With Mushrooms, Swiss & Bacon', price: 17.00 },
+  { category: 'Burgers & Dogs* (All burgers come with L,T.O + Pickle)', name: 'Plain Dog', desc: 'Ask what you can add.', price: 8.00 },
+  { category: 'Burgers & Dogs* (All burgers come with L,T.O + Pickle)', name: 'The Carpetbagger (dog!)', desc: 'With Must., Rel., Onions, Tomato, Peppers, Celery Salt', price: 10.00 },
+  { category: 'Burgers & Dogs* (All burgers come with L,T.O + Pickle)', name: 'Southern Dog', desc: 'With Pimento Cheese & Bacon', price: 11.00 },
+  { category: 'Burgers & Dogs* (All burgers come with L,T.O + Pickle)', name: 'Make it Impossible', desc: '', price: 4.00 },
+  { category: 'Burgers & Dogs* (All burgers come with L,T.O + Pickle)', name: 'Add Cheese', desc: '', price: 2.50 },
+  { category: 'Burgers & Dogs* (All burgers come with L,T.O + Pickle)', name: 'Add a Fried Egg', desc: '', price: 2.50 },
+  { category: 'Burgers & Dogs* (All burgers come with L,T.O + Pickle)', name: 'Add Avocado', desc: '', price: 2.50 },
+  { category: 'Burgers & Dogs* (All burgers come with L,T.O + Pickle)', name: 'Sub Gluten Free Bun', desc: '', price: 1.00 },
 
   // Other Entrees
-  { category: 'Other Entrees', name: 'Chicken Tenders', desc: 'Comes with a side \'n\' a sauce.', price: 15.00 },
-  { category: 'Other Entrees', name: 'Fish \'N\' Chips', desc: 'Fried Cod with fries and slaw.', price: 15.00 },
-  { category: 'Other Entrees', name: 'Falafel Wrap', desc: 'Falafel, Hummus, Blue Chz., Buff Sauce, L,T, Cukes.', price: 12.00 },
-  { category: 'Other Entrees', name: 'Wings', desc: '10 wings $15.99 / 20 wings $29.99. Buffalo, AJ\'s Sweet Hot, Lemon Pepper, Jerk', price: 15.99 },
+  { category: 'Other Entrees', name: 'Chicken Tenders', desc: 'Fresh, never frozen, coated in a mixture of our own devising and fried in Rice Bran Oil. Comes with a side \'n\' a sauce.', price: 15.00 },
+  { category: 'Other Entrees', name: 'Fish \'N\' Chips', desc: 'Fried Cod served with Fries, Our Slaw, Tartar and Lemon.', price: 15.00 },
+  { category: 'Other Entrees', name: 'Falafel Wrap', desc: 'Falafel balls served with our Hummus, Blue Cheese Crumbles, Buffalo Sauce, L, T, Cukes on a Pita.', price: 12.00 },
+  { category: 'Other Entrees', name: 'Wings', desc: 'Fresh, never frozen Jumbo Wings. 10 wings, 15.99, 20 wings 29.99. Choose from Buffalo, AJ\'s Sweet Hot, Lemon Pepper or Jerk.', price: 15.99 },
 
   // Sides
-  { category: 'Sides', name: 'Fries', desc: 'Hand-cut French fries', price: 5.00 },
-  { category: 'Sides', name: 'Slaw', desc: 'Fresh coleslaw', price: 3.00 },
+  { category: 'Sides', name: 'Fries', desc: 'Hand-cut French Fries. Our hands, your fries.', price: 5.00 },
+  { category: 'Sides', name: 'Slaw', desc: 'Jason\'s excellent fresh coleslaw.', price: 3.00 },
   { category: 'Sides', name: 'Cup O\' Salad', desc: 'Fresh garden salad', price: 3.00 },
-  { category: 'Sides', name: 'Tots', desc: 'The darn well worth a little more sides', price: 5.50 },
+  { category: 'Sides', name: 'Tots', desc: 'Not cut by hand. Humans cannot make tots, Only machines can.', price: 5.50 },
   { category: 'Sides', name: 'Broccoli', desc: 'Fresh steamed broccoli', price: 4.00 },
-  { category: 'Sides', name: 'Green Beans', desc: 'Fresh steamed green beans', price: 5.00 },
-  { category: 'Sides', name: 'Mac \'n\' Cheese', desc: 'Creamy mac and cheese', price: 6.00 },
+  { category: 'Sides', name: 'Green Beans', desc: 'Fresh green beans cooked on the flat top and tossed in a mix of Soy and Balsamic.', price: 5.00 },
+  { category: 'Sides', name: 'Mac \'n\' Cheese', desc: 'Creamy Mac made with our own cheese sauce.', price: 6.00 },
   { category: 'Sides', name: 'Fresh Fried Okra', desc: 'If avail. - The darn well worth a little more sides', price: 6.00 },
 ]
 
@@ -136,40 +138,56 @@ export default function MenuPage() {
   const beverageCategories = [...new Set(beverageItems.map(item => item.category))]
   const draftCategories = [...new Set(draftItems.map(item => item.category))]
   
+  const menuSchema = {
+    "@context": "https://schema.org",
+    "@type": "Menu",
+    "name": "The Imperial Menu",
+    "description": "Full menu featuring Southern comfort food, craft beer, and handcrafted cocktails at The Imperial in Decatur, GA",
+    "inLanguage": "en-US",
+    "menuSection": [
+      {
+        "@type": "MenuSection",
+        "name": "Appetizers",
+        "description": "Delicious starters including our famous pimento cheese and fried pickles"
+      },
+      {
+        "@type": "MenuSection", 
+        "name": "Entrees",
+        "description": "Hearty Southern comfort food with modern twists"
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Beverages", 
+        "description": "Craft beer, wine, and signature cocktails"
+      }
+    ]
+  }
+
   return (
-    <Layout>
+    <>
+      <SEOHead 
+        title="Menu | The Imperial Decatur"
+        description="View our full menu featuring Southern comfort food, appetizers, entrees, and craft beverages. Home of the famous pimento cheese plate and craft beer selection in Decatur, GA."
+        canonical="/menu"
+        pageType="restaurant"
+        structuredData={menuSchema}
+      />
+      <Layout>
       <div className="text-center mb-8 pt-8">
-        <h1 className="text-4xl font-bold mb-4">Our Menu</h1>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-dark tracking-tight letter-spacing-tight">Our Menu</h1>
+        <p className="text-xl text-warm-gray max-w-3xl mx-auto font-light leading-relaxed">
           Pure pub grub with Southern comfort and typical bar food with a twist. 
           Our menu features witty descriptions and creative takes on classic dishes.
         </p>
       </div>
 
-      {/* Special Items */}
-      <div className="bg-gradient-to-r from-red-50 to-orange-50 p-8 rounded-lg border border-red-200 mb-12">
-        <h2 className="text-2xl font-bold mb-6 text-center">This Week's Specials</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-lg shadow-sm text-center">
-            <h3 className="font-bold text-lg text-red-600 mb-2">Burger Of The Week</h3>
-            <p className="text-gray-800 font-semibold">The Drunken Mushroom</p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-sm text-center">
-            <h3 className="font-bold text-lg text-red-600 mb-2">Dessert</h3>
-            <p className="text-gray-800 font-semibold">Robert's Heat-Beatin', Life-Affirmin' Key Lime Pie</p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-sm text-center">
-            <h3 className="font-bold text-lg text-red-600 mb-2">Draft Cocktail</h3>
-            <p className="text-gray-800 font-semibold">The Gin-Gin Negroni</p>
-          </div>
-        </div>
-      </div>
+
       
       {/* Food Menu */}
       {foodCategories.map(category => {
         const categoryItems = menuItems.filter(item => item.category === category);
-        const mainItems = categoryItems.filter(item => !item.name.includes('Add') && !item.name.includes('Make it'));
-        const addOnItems = categoryItems.filter(item => item.name.includes('Add') || item.name.includes('Make it'));
+        const mainItems = categoryItems.filter(item => !item.name.includes('Add') && !item.name.includes('Make it') && !item.name.includes('Sub Gluten Free'));
+        const addOnItems = categoryItems.filter(item => item.name.includes('Add') || item.name.includes('Make it') || item.name.includes('Sub Gluten Free'));
         
         return (
           <div key={category} className="mb-12">
@@ -201,7 +219,7 @@ export default function MenuPage() {
                         <h4 className="font-semibold text-gray-800">{item.name}</h4>
                         <span className="text-red-600 font-bold">+${item.price.toFixed(2)}</span>
                       </div>
-                      <p className="text-sm text-gray-600 mt-1">{item.desc}</p>
+                      {item.desc && <p className="text-sm text-gray-600 mt-1">{item.desc}</p>}
                     </div>
                   ))}
                 </div>
@@ -269,5 +287,6 @@ export default function MenuPage() {
         </p>
       </div>
     </Layout>
+    </>
   )
 }

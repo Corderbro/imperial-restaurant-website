@@ -1,0 +1,50 @@
+{
+  "name": "The Imperial - Neighborhood Gastropub",
+  "short_name": "The Imperial",
+  "description": "A funky neighborhood gastropub in Oakhurst, Decatur, featuring Southern comfort food, craft beer, and a dog-friendly patio.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fafaf9",
+  "theme_color": "#dc2626",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/ImperialLogo.png",
+      "sizes": "200x60",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/ImperialLogo.png",
+      "sizes": "200x60",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["food", "restaurant", "lifestyle"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "shortcuts": [
+    {
+      "name": "View Menu",
+      "short_name": "Menu",
+      "description": "View our full food and drink menu",
+      "url": "/menu",
+      "icons": [{ "src": "/ImperialLogo.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Contact & Hours",
+      "short_name": "Contact",
+      "description": "Get our hours and contact information",
+      "url": "/contact",
+      "icons": [{ "src": "/ImperialLogo.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Call Restaurant",
+      "short_name": "Call",
+      "description": "Call The Imperial directly",
+      "url": "tel:+14044645698",
+      "icons": [{ "src": "/ImperialLogo.png", "sizes": "96x96" }]
+    }
+  ]
+}

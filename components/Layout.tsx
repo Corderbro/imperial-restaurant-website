@@ -1,11 +1,17 @@
 import Header from './Header'
 import Footer from './Footer'
+import Breadcrumbs from './Breadcrumbs'
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+interface LayoutProps {
+  children: React.ReactNode
+}
+
+export default function Layout({ children }: LayoutProps) {
   return (
     <>
       <Header />
-      <main className="pt-20 min-h-screen bg-warm-white">
+      <Breadcrumbs />
+      <main className="pt-32 min-h-screen bg-warm-white">
         {children}
       </main>
       <Footer />
