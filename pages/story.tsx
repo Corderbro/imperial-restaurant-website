@@ -37,21 +37,22 @@ export default function Story() {
         pageType="about"
       />
       <Layout>
+        {/* Page Header */}
+        <section className="py-24 px-4 bg-white">
+          <div className="max-w-6xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-dark tracking-tight letter-spacing-tight">
+              Our Story & Events
+            </h1>
+            <p className="text-xl text-warm-gray max-w-3xl mx-auto font-light leading-relaxed">
+              From a 1920s service station to your favorite neighborhood bar.
+            </p>
+          </div>
+        </section>
+        
         <div className="pt-8">
-          {/* Hero Section */}
-          <section className="py-24 px-4 bg-white">
-            <div className="max-w-6xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-dark tracking-tight letter-spacing-tight">
-                Our Story & Events
-              </h1>
-              <p className="text-xl text-warm-gray max-w-3xl mx-auto font-light leading-relaxed">
-                From a 1920s service station to your favorite neighborhood bar.
-              </p>
-            </div>
-          </section>
 
           {/* The Story */}
-          <section className="py-24 px-4 bg-gray-50">
+          <section className="py-24 px-4">
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
@@ -88,17 +89,17 @@ export default function Story() {
             </div>
           </section>
 
-          {/* Weekly Events */}
-          <section className="py-24 px-4 bg-white">
+          {/* Events */}
+          <section id="events" className="py-24 px-4">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-dark tracking-tight letter-spacing-tight">Weekly Events</h2>
-                <p className="text-xl text-warm-gray max-w-3xl mx-auto font-light leading-relaxed">
+              <div className="text-center mb-16 bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-dark tracking-tight letter-spacing-tight">Events</h2>
+                <p className="text-xl text-dark max-w-3xl mx-auto font-light leading-relaxed">
                   Join us for these regular happenings.
                 </p>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                 {events.map((event, index) => (
                   <div key={index} className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                     <div className={`font-bold text-lg mb-3 ${event.color} letter-spacing-wide`}>{event.day}</div>
@@ -108,19 +109,7 @@ export default function Story() {
                   </div>
                 ))}
               </div>
-            </div>
-          </section>
 
-          {/* Additional Events */}
-          <section className="py-24 px-4 bg-gray-50">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-dark tracking-tight letter-spacing-tight">More Events</h2>
-                <p className="text-xl text-warm-gray max-w-3xl mx-auto font-light leading-relaxed">
-                  Additional regular events and special occasions
-                </p>
-              </div>
-              
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <div className="text-neon-green font-bold text-lg mb-3 letter-spacing-wide">Packers Games</div>
@@ -143,129 +132,55 @@ export default function Story() {
             </div>
           </section>
 
-          {/* Trivia Details */}
+          {/* Private Events */}
           <section className="py-24 px-4 bg-white">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-dark tracking-tight letter-spacing-tight">
-                  Trivia Nights at The Imperial
-                </h2>
-                <p className="text-xl text-warm-gray max-w-3xl mx-auto font-light leading-relaxed">
-                  Two nights of trivia fun with Robert Holland and DJ Blaq Mozart
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-dark tracking-tight letter-spacing-tight">Host Your Event at The Imperial</h2>
+                <p className="text-xl text-dark max-w-3xl mx-auto font-light leading-relaxed mt-4">
+                  Perfect space for your special occasions
                 </p>
               </div>
               
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div className="space-y-8">
-                  <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
-                    <h3 className="text-2xl font-bold mb-6 text-neon-red letter-spacing-wide">Schedule</h3>
-                    <div className="space-y-4">
-                      <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                        <span className="text-gray-700 font-medium">Robert's Trivia Night:</span>
-                        <span className="text-neon-red font-semibold">Monday 8:00 PM</span>
-                      </div>
-                      <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                        <span className="text-gray-700 font-medium">DJ Blaq Mozart's Trivia:</span>
-                        <span className="text-neon-red font-semibold">Tuesday 8:00 PM</span>
-                      </div>
-                    </div>
+              <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200 max-w-3xl mx-auto">
+                <p className="text-gray-700 mb-6 font-light leading-relaxed text-lg">
+                  Our space is perfect for:
+                </p>
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
+                    <span className="text-neon-red text-xl">✓</span>
+                    <span className="font-medium text-gray-800">Birthday parties (trivia-themed or not)</span>
+                  </div>
+                  <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
+                    <span className="text-neon-red text-xl">✓</span>
+                    <span className="font-medium text-gray-800">Corporate happy hours</span>
+                  </div>
+                  <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
+                    <span className="text-neon-red text-xl">✓</span>
+                    <span className="font-medium text-gray-800">Fundraisers</span>
+                  </div>
+                  <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
+                    <span className="text-neon-red text-xl">✓</span>
+                    <span className="font-medium text-gray-800">Rehearsal dinners</span>
+                  </div>
+                  <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
+                    <span className="text-neon-red text-xl">✓</span>
+                    <span className="font-medium text-gray-800">Watch parties</span>
                   </div>
                 </div>
-                
-                <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200 text-center">
-                  <h3 className="text-2xl font-bold mb-4 text-dark letter-spacing-tight">Ready to Test Your Knowledge?</h3>
-                  <p className="text-gray-600 mb-6 font-light leading-relaxed">
-                    Join us for the most popular trivia night in Decatur! 
-                    No reservations required - just show up and have fun.
-                  </p>
-                  <div className="space-y-4">
-                    <a 
-                      href="tel:4044645698" 
-                      className="inline-flex items-center gap-2 bg-neon-red hover:bg-neon-red-dark text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-glow-red transform hover:scale-105 active:scale-95"
-                    >
-                      📞 Call (404) 464-5698
-                    </a>
-                    <div className="text-sm text-gray-600">
-                      <p>726 W College Ave, Decatur GA 30030</p>
-                      <Link href="/contact" className="text-neon-red hover:text-neon-red-dark font-semibold">
-                        Get Directions
-                      </Link>
-                    </div>
-                  </div>
+                <div className="text-center">
+                  <a 
+                    href="tel:+14044645698" 
+                    className="inline-flex items-center gap-2 bg-neon-red hover:bg-neon-red-dark text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-glow-red transform hover:scale-105 active:scale-95"
+                    aria-label="Call to discuss your event"
+                  >
+                    <span>📞</span> Call (404) 464-5698 to discuss your event
+                  </a>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* Community */}
-          <section className="py-24 px-4 bg-gray-50">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-dark tracking-tight letter-spacing-tight">Community</h2>
-                <p className="text-xl text-warm-gray max-w-3xl mx-auto font-light leading-relaxed">
-                  We're proud to be part of the vibrant Decatur community, participating in events 
-                  like local celebrations and neighborhood gatherings.
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
-                  <h3 className="text-2xl font-bold text-neon-yellow mb-6 letter-spacing-wide">Perfect For</h3>
-                  <div className="space-y-3 text-gray-700">
-                    <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                      <span className="text-neon-red text-lg">🍽️</span>
-                      <span className="font-medium">Casual dining</span>
-                    </div>
-                    <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                      <span className="text-neon-red text-lg">👥</span>
-                      <span className="font-medium">Group gatherings</span>
-                    </div>
-                    <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                      <span className="text-neon-red text-lg">📺</span>
-                      <span className="font-medium">Game day viewing</span>
-                    </div>
-                    <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                      <span className="text-neon-red text-lg">🎉</span>
-                      <span className="font-medium">Private events</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="relative overflow-hidden rounded-2xl shadow-xl">
-                  <Image 
-                    src="/impPatio.jpg" 
-                    alt="The Imperial Patio" 
-                    width={500} 
-                    height={400}
-                    className="w-full h-80 object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute bottom-6 left-6 text-white">
-                    <h3 className="font-bold text-xl mb-2 letter-spacing-wide">Dog-Friendly Patio</h3>
-                    <p className="text-sm opacity-90 font-light leading-relaxed">Where neighbors become friends</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Call to Action */}
-          <section className="py-24 px-4 bg-white">
-            <div className="max-w-6xl mx-auto text-center">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-dark tracking-tight letter-spacing-tight">Visit Us</h2>
-              <p className="text-xl text-warm-gray mb-12 font-light max-w-3xl mx-auto leading-relaxed">
-                Come experience The Imperial for yourself.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Link href="/menu" className="bg-neon-red hover:bg-neon-red-dark text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-glow-red transform hover:scale-105 active:scale-95">
-                  View Our Menu
-                </Link>
-                <Link href="/contact" className="bg-transparent border-2 border-neon-blue text-neon-blue hover:bg-neon-blue hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-glow-blue transform hover:scale-105 active:scale-95">
-                  Get Directions
-                </Link>
-              </div>
-            </div>
-          </section>
         </div>
       </Layout>
     </>
