@@ -1,4 +1,5 @@
 import Layout from '../components/Layout'
+import { useState, useEffect } from 'react'
 
 const menuItems = [
   // Appetizers
@@ -136,15 +137,80 @@ export default function MenuPage() {
   const beverageCategories = [...new Set(beverageItems.map(item => item.category))]
   const draftCategories = [...new Set(draftItems.map(item => item.category))]
   
+  const allCategories = [
+    ...foodCategories.map(cat => ({ name: cat, type: 'food', id: cat.toLowerCase().replace(/\s+/g, '-').replace(/[&*]/g, '') })),
+    ...beverageCategories.map(cat => ({ name: cat, type: 'beverage', id: cat.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, '') })),
+    ...draftCategories.map(cat => ({ name: cat, type: 'draft', id: cat.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, '') }))
+  ]
+  
+  const [showScrollTop, setShowScrollTop] = useState(false)
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 400)
+    }
+    
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+  
+  const scrollToCategory = (categoryId: string) => {
+    const element = document.getElementById(categoryId)
+    if (element) {
+      const headerOffset = 100
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+    }
+  }
+  
+  const scrollToTop = () => {
+    const categoryNav = document.querySelector('[data-category-nav]')
+    if (categoryNav) {
+      categoryNav.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+  
   return (
     <Layout>
-      <div className="text-center mb-8 pt-8">
-        <h1 className="text-4xl font-bold mb-4">Our Menu</h1>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Pure pub grub with Southern comfort and typical bar food with a twist. 
-          Our menu features witty descriptions and creative takes on classic dishes.
-        </p>
-      </div>
+      {/* Page Header */}
+      <section className="py-12 px-4 bg-off-white">
+        <div className="max-w-6xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-dark tracking-tight letter-spacing-tight">
+            Our Menu
+          </h1>
+          <p className="text-xl text-warm-gray max-w-3xl mx-auto font-light leading-relaxed">
+            Pure pub grub with Southern comfort and typical bar food with a twist. 
+            Our menu features witty descriptions and creative takes on classic dishes.
+          </p>
+        </div>
+      </section>
+
+      {/* Category Navigation */}
+      <section className="py-8 px-4 bg-off-white border-b border-light-gray" data-category-nav>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-xl font-semibold mb-4 text-center" style={{ color: '#A4343A' }}>Jump to Section</h2>
+          <div className="flex flex-wrap gap-3 justify-center">
+            {allCategories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => scrollToCategory(category.id)}
+                className="px-4 py-2 bg-gray-100 hover:bg-imperial-red hover:text-white text-gray-700 rounded-lg text-sm font-medium transition-all duration-200"
+              >
+                {category.name}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="pt-4">
 
       {/* Specials section removed per request */}
       
@@ -154,19 +220,20 @@ export default function MenuPage() {
         const mainItems = categoryItems.filter(item => !item.name.includes('Add') && !item.name.includes('Make it'));
         const addOnItems = categoryItems.filter(item => item.name.includes('Add') || item.name.includes('Make it'));
         
+        const categoryId = category.toLowerCase().replace(/\s+/g, '-').replace(/[&*]/g, '')
         return (
-          <div key={category} className="mb-12">
-            <div className="border-b-2 border-red-600 pb-2 mb-6">
-              <h2 className="text-3xl font-bold text-gray-800">{category}</h2>
+          <div key={category} id={categoryId} className="mb-8 scroll-mt-24">
+            <div className="border-b-2 pb-2 mb-6" style={{ borderColor: '#D4B896' }}>
+              <h2 className="text-3xl font-bold" style={{ color: '#A4343A' }}>{category}</h2>
             </div>
             
             {/* Main Menu Items */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               {mainItems.map((item, i) => (
-                <div key={i} className="bg-white border border-gray-200 p-6 rounded-lg hover:shadow-lg transition-all duration-200 hover:border-red-300">
+                <div key={i} className="bg-light-cream border border-light-gray p-6 rounded-lg hover:shadow-lg transition-all duration-200 hover:border-imperial-red">
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="text-xl font-semibold text-gray-800">{item.name}</h3>
-                    <div className="text-xl font-bold text-red-600">${item.price.toFixed(2)}</div>
+                    <div className="text-xl font-bold" style={{ color: '#A4343A' }}>${item.price.toFixed(2)}</div>
                   </div>
                   <p className="text-gray-600 text-sm italic">{item.desc}</p>
                 </div>
@@ -176,13 +243,13 @@ export default function MenuPage() {
             {/* Add-on Items */}
             {addOnItems.length > 0 && (
               <div className="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-lg border border-red-200">
-                <h3 className="text-lg font-bold mb-4 text-center text-red-700">Add-ons</h3>
+                <h3 className="text-lg font-bold mb-4 text-center" style={{ color: '#A4343A' }}>Add-ons</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {addOnItems.map((item, i) => (
-                    <div key={i} className="bg-white p-4 rounded-lg shadow-sm border border-red-100">
+                    <div key={i} className="bg-light-cream p-4 rounded-lg shadow-sm border border-light-gray">
                       <div className="flex justify-between items-center">
                         <h4 className="font-semibold text-gray-800">{item.name}</h4>
-                        <span className="text-red-600 font-bold">+${item.price.toFixed(2)}</span>
+                        <span className="font-bold" style={{ color: '#A4343A' }}>+${item.price.toFixed(2)}</span>
                       </div>
                       <p className="text-sm text-gray-600 mt-1">{item.desc}</p>
                     </div>
@@ -195,62 +262,85 @@ export default function MenuPage() {
       })}
 
       {/* Beverage Menu */}
-      {beverageCategories.map(category => (
-        <div key={category} className="mb-12">
-          <div className="border-b-2 border-blue-600 pb-2 mb-6">
-            <h2 className="text-3xl font-bold text-gray-800">{category}</h2>
+      {beverageCategories.map(category => {
+        const categoryId = category.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, '')
+        return (
+          <div key={category} id={categoryId} className="mb-8 scroll-mt-24">
+          <div className="border-b-2 pb-2 mb-6" style={{ borderColor: '#D4B896' }}>
+            <h2 className="text-3xl font-bold" style={{ color: '#A4343A' }}>{category}</h2>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {beverageItems
-              .filter(item => item.category === category)
-              .map((item, i) => (
-                <div key={i} className="bg-white border border-gray-200 p-6 rounded-lg hover:shadow-lg transition-all duration-200 hover:border-blue-300">
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-xl font-semibold text-gray-800">{item.name}</h3>
-                    <div className="text-xl font-bold text-blue-600">${item.price.toFixed(2)}</div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {beverageItems
+                .filter(item => item.category === category)
+                .map((item, i) => (
+                  <div key={i} className="bg-light-cream border border-light-gray p-6 rounded-lg hover:shadow-lg transition-all duration-200 hover:border-champagne-gold">
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="text-xl font-semibold text-gray-800">{item.name}</h3>
+                      <div className="text-xl font-bold" style={{ color: '#A4343A' }}>${item.price.toFixed(2)}</div>
+                    </div>
+                    <p className="text-gray-600 text-sm italic">{item.desc}</p>
                   </div>
-                  <p className="text-gray-600 text-sm italic">{item.desc}</p>
-                </div>
-              ))}
+                ))}
+            </div>
           </div>
-        </div>
-      ))}
+        )
+      })}
 
       {/* Draft Menu */}
-      {draftCategories.map(category => (
-        <div key={category} className="mb-12">
-          <div className="border-b-2 border-green-600 pb-2 mb-6">
-            <h2 className="text-3xl font-bold text-gray-800">{category}</h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {draftItems
-              .filter(item => item.category === category)
-              .map((item, i) => (
-                <div key={i} className="bg-white border border-gray-200 p-6 rounded-lg hover:shadow-lg transition-all duration-200 hover:border-green-300">
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-xl font-semibold text-gray-800">{item.name}</h3>
-                    <div className="text-xl font-bold text-green-600">${item.price.toFixed(2)}</div>
+      {draftCategories.map(category => {
+        const categoryId = category.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, '')
+        return (
+          <div key={category} id={categoryId} className="mb-8 scroll-mt-24">
+            <div className="border-b-2 pb-2 mb-6" style={{ borderColor: '#D4B896' }}>
+              <h2 className="text-3xl font-bold" style={{ color: '#A4343A' }}>{category}</h2>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {draftItems
+                .filter(item => item.category === category)
+                .map((item, i) => (
+                  <div key={i} className="bg-light-cream border border-light-gray p-6 rounded-lg hover:shadow-lg transition-all duration-200 hover:border-champagne-gold">
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="text-xl font-semibold text-gray-800">{item.name}</h3>
+                      <div className="text-xl font-bold" style={{ color: '#A4343A' }}>${item.price.toFixed(2)}</div>
+                    </div>
+                    <p className="text-gray-600 text-sm italic">{item.desc}</p>
                   </div>
-                  <p className="text-gray-600 text-sm italic">{item.desc}</p>
-                </div>
-              ))}
+                ))}
+            </div>
           </div>
-        </div>
-      ))}
+        )
+      })}
       
 
 
 
 
       {/* Disclaimer */}
-      <div className="bg-gray-100 p-6 rounded-lg border border-gray-300">
+      <div className="bg-light-cream p-6 rounded-lg border border-light-gray mb-8">
         <p className="text-sm text-gray-600 text-center">
           <strong>*</strong> Dekalb County would like you to know that eating undercooked meat can lead to foodborne illness. 
           So can undercooked shellfish, but if you're having that, you're in another restaurant.
         </p>
       </div>
+      </div>
+      
+      {/* Scroll to Top Button */}
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 z-50 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 active:scale-95"
+          style={{ backgroundColor: '#A4343A' }}
+          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#6B1E23'}
+          onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#A4343A'}
+          aria-label="Scroll to top"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+          </svg>
+        </button>
+      )}
     </Layout>
   )
 }
