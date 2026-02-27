@@ -161,9 +161,12 @@ export default function Story() {
                   </div>
                 </div>
                 <div className="text-center">
-                  <a 
-                    href="tel:+14044645698" 
-                    className="inline-flex items-center gap-2 bg-neon-red hover:bg-neon-red-dark text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-glow-red transform hover:scale-105 active:scale-95"
+                  <a
+                    href="tel:+14044645698"
+                    className="inline-flex items-center gap-2 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg transform hover:scale-105 active:scale-95"
+                    style={{ backgroundColor: '#A4343A' }}
+                    onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#6B1E23' }}
+                    onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#A4343A' }}
                     aria-label="Call to discuss your event"
                   >
                     <span>📞</span> Call (404) 464-5698 to discuss your event
