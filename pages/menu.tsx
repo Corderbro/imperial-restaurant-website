@@ -3,62 +3,63 @@ import { useState, useEffect } from 'react'
 
 const menuItems = [
   // Appetizers
-  { category: 'Appetizers', name: 'Mozzarella Sticks (V)', desc: 'Served with marinara', price: 8.50 },
-  { category: 'Appetizers', name: 'Fried Pickles (V)', desc: 'Served with ranch', price: 6.50 },
-  { category: 'Appetizers', name: 'Pimento Cheese Plate (V)', desc: 'Our own! Served with saltines. You can add celery!', price: 9.50 },
-  { category: 'Appetizers', name: 'Spring Rolls', desc: '2 veg-filled, yet fried rolls. A yin-yang sorta thing.', price: 8.50 },
-  { category: 'Appetizers', name: 'Pizza Rolls', desc: 'House-made, filled with ground beef, pepperoni and mozzarella. Served with marinara and ranch.', price: 11.00 },
-  { category: 'Appetizers', name: 'Cuban Rolls', desc: 'Filled with our pork, ham, pickles, mustard & mojo.', price: 11.00 },
-  { category: 'Appetizers', name: 'La Poutine de Georgia (V)', desc: 'Now with veggie gravy...but you can still add bacon!', price: 10.00 },
-  { category: 'Appetizers', name: 'Hummus Plate (V)', desc: 'Made right \'cheer!', price: 12.00 },
-  { category: 'Appetizers', name: 'Nachos', desc: 'Chips, Cheese Sauce, LTO, Jalapeños. SC on request. Ask your server what else you can add today!', price: 12.00 },
-  { category: 'Appetizers', name: 'The Big Ass Pretzel (V)', desc: 'Add cheese +2', price: 8.00 },
+  { category: 'Appetizers', name: 'Mozzarella Sticks (V)', desc: 'Served with marinara', price: 8.75 },
+  { category: 'Appetizers', name: 'Fried Pickles (V)', desc: 'Served with ranch', price: 6.75 },
+  { category: 'Appetizers', name: 'Pimento Cheese Plate (V)', desc: 'Our own! Served with saltines. You can add celery!', price: 9.75 },
+  { category: 'Appetizers', name: 'Spring Rolls (V)', desc: '2 veg-filled, yet fried rolls. A yin-yang sorta thing.', price: 9.00 },
+  { category: 'Appetizers', name: 'Pizza Rolls', desc: 'House-made, filled with ground beef, pepperoni and mozzarella. Served with marinara and ranch.', price: 11.50 },
+  { category: 'Appetizers', name: 'Cuban Rolls', desc: 'Filled with our pork, ham, pickles, mustard & mojo.', price: 11.50 },
+  { category: 'Appetizers', name: 'La Poutine de Georgia (V)', desc: 'Now with veggie gravy...but you can still add bacon!', price: 10.50 },
+  { category: 'Appetizers', name: 'Hummus Plate (V)', desc: 'Made right \'cheer!', price: 12.50 },
+  { category: 'Appetizers', name: 'Nachos (V)', desc: 'Chips, Cheese Sauce, Lettuce, Pico Jalapeños & SC on request. Ask your server about other additions!', price: 12.50 },
+  { category: 'Appetizers', name: 'The Big Ass Pretzel (V)', desc: 'Add cheese +2', price: 8.50 },
 
   // Soups and Salads
-  { category: 'Soups and Salads', name: 'Chili: Beef or Veggie', desc: 'Small $6 / Large $7', price: 6.00 },
-  { category: 'Soups and Salads', name: 'Caesar Salad (V)', desc: 'Small $5 / Large $7', price: 5.00 },
-  { category: 'Soups and Salads', name: 'Lemony Greens', desc: 'Spring Mix, Toasted Chickpeas, Cherry Toms, Blue Crumbles and Lemon Vinaigrette.', price: 12.00 },
-  { category: 'Soups and Salads', name: 'Charred Broccoli Salad (V)', desc: 'Small $9 / Large $11', price: 9.00 },
+  { category: 'Soups and Salads', name: 'Chili: Beef or Veggie (V)', desc: 'Small $6.25 / Large $7.50', price: 6.25 },
+  { category: 'Soups and Salads', name: 'Caesar Salad (V)', desc: 'Small $5.25 / Large $7.50', price: 5.25 },
+  { category: 'Soups and Salads', name: 'Lemony Greens (V)', desc: 'Spring Mix, Toasted Chickpeas, Cherry Toms, Blue Crumbles and Lemon Vinaigrette.', price: 12.00 },
+  { category: 'Soups and Salads', name: 'Charred Broccoli Salad (V)', desc: 'Small $9 / Large $11. Spring Mix, Charred Broc, Dried Cranberries, Beets, Blue Crumbles, Grilled Apples.', price: 9.00 },
   { category: 'Soups and Salads', name: 'Add Grilled Chicken', desc: 'Add to any salad', price: 5.00 },
+  { category: 'Soups and Salads', name: 'Add Bacon', desc: 'Add to any salad', price: 2.50 },
 
-  // Sandwiches
-  { category: 'Sandwiches', name: 'Bowie Q', desc: 'Pulled pork from our own smoker.', price: 11.00 },
-  { category: 'Sandwiches', name: 'B.L.T', desc: 'Available on White/Wheat bread.', price: 9.50 },
+  // Sandwiches (all come with a side, some at small up-charge)
+  { category: 'Sandwiches', name: 'Bowie Q', desc: 'Pulled pork from our own smoker.', price: 11.50 },
+  { category: 'Sandwiches', name: 'B.L.T', desc: 'White/Wheat bread.', price: 9.50 },
   { category: 'Sandwiches', name: 'Chicken Caesar Wrap', desc: 'Fresh grilled chicken with Caesar dressing', price: 15.00 },
-  { category: 'Sandwiches', name: 'Fried Fish', desc: 'Served with Tartar or Cocktail sauce.', price: 15.50 },
-  { category: 'Sandwiches', name: 'Chicken Philly or The Philly Philly (NV)', desc: 'Classic Philly cheese steak', price: 15.00 },
-  { category: 'Sandwiches', name: 'Mushroom Philly (V)', desc: 'Vegetarian Philly option', price: 12.00 },
+  { category: 'Sandwiches', name: 'Chicken Philly or The Philly Philly (NV)', desc: 'Classic Philly cheese steak', price: 15.50 },
+  { category: 'Sandwiches', name: 'Mushroom Philly (V)', desc: 'Vegetarian Philly option', price: 13.50 },
 
-  // Burgers & Dogs
-  { category: 'Burgers & Dogs*', name: 'Plain Burger*', desc: 'Classic beef burger with LTO+pickle & a side', price: 13.00 },
-  { category: 'Burgers & Dogs*', name: 'The Holland*', desc: 'With Caramelized onions', price: 14.00 },
-  { category: 'Burgers & Dogs*', name: 'Southern Living*', desc: 'With Pimento Cheese & Bacon', price: 17.00 },
-  { category: 'Burgers & Dogs*', name: 'KR\'s Psychedelic N Mexico Experience*', desc: 'With Green chilies, cheddar', price: 16.00 },
-  { category: 'Burgers & Dogs*', name: 'Buffalo Blue*', desc: 'With Buffalo Sauce & Blue Cheese', price: 16.00 },
-  { category: 'Burgers & Dogs*', name: 'The Bowie*', desc: 'With Mushrooms, Swiss & Bacon', price: 17.00 },
-  { category: 'Burgers & Dogs*', name: 'Plain Dog', desc: 'Ask what you can add.', price: 8.00 },
+  // Burgers & Dogs (all burgers come w/ LTO+pickle & a side, some at small up-charge)
+  { category: 'Burgers & Dogs*', name: 'Plain Burger*', desc: 'Classic beef burger with LTO+pickle & a side', price: 14.00 },
+  { category: 'Burgers & Dogs*', name: 'The Holland*', desc: 'With Caramelized onions', price: 15.50 },
+  { category: 'Burgers & Dogs*', name: 'Southern Living*', desc: 'With Pimento Cheese & Bacon', price: 17.50 },
+  { category: 'Burgers & Dogs*', name: 'KR\'s Psychedelic N Mexico Experience*', desc: 'With Green chilies, cheddar', price: 16.50 },
+  { category: 'Burgers & Dogs*', name: 'Buffalo Blue*', desc: 'With Buffalo Sauce & Blue Cheese', price: 16.50 },
+  { category: 'Burgers & Dogs*', name: 'The Bowie*', desc: 'With Mushrooms, Swiss & Bacon', price: 17.50 },
+  { category: 'Burgers & Dogs*', name: 'Plain Dog', desc: 'Ask what you can add.', price: 8.25 },
   { category: 'Burgers & Dogs*', name: 'The Carpetbagger (dog!)', desc: 'With Must., Rel., Onions, Tomato, Peppers, Celery Salt', price: 10.00 },
-  { category: 'Burgers & Dogs*', name: 'Southern Dog', desc: 'With Pimento Cheese & Bacon', price: 11.00 },
+  { category: 'Burgers & Dogs*', name: 'Southern Dog', desc: 'With Pimento Cheese & Bacon', price: 11.50 },
   { category: 'Burgers & Dogs*', name: 'Make it Impossible', desc: 'Add to any burger', price: 4.00 },
   { category: 'Burgers & Dogs*', name: 'Add Cheese', desc: 'Add to any burger', price: 2.50 },
   { category: 'Burgers & Dogs*', name: 'Add a Fried Egg', desc: 'Add to any burger', price: 2.50 },
   { category: 'Burgers & Dogs*', name: 'Add Avocado', desc: 'Add to any burger', price: 2.50 },
+  { category: 'Burgers & Dogs*', name: 'Add Bacon', desc: 'Add to any burger', price: 2.50 },
+  { category: 'Burgers & Dogs*', name: 'Sub Gluten-Free Bun', desc: 'Add to any burger', price: 1.50 },
 
   // Other Entrees
-  { category: 'Other Entrees', name: 'Chicken Tenders', desc: 'Comes with a side \'n\' a sauce.', price: 15.00 },
-  { category: 'Other Entrees', name: 'Fish \'N\' Chips', desc: 'Fried Cod with fries and slaw.', price: 15.00 },
-  { category: 'Other Entrees', name: 'Falafel Wrap', desc: 'Falafel, Hummus, Blue Chz., Buff Sauce, L,T, Cukes.', price: 12.00 },
+  { category: 'Other Entrees', name: 'Chicken Tenders', desc: 'Comes with a side \'n\' a sauce.', price: 15.50 },
+  { category: 'Other Entrees', name: 'Fish \'N\' Chips', desc: 'Fried Cod with fries and slaw.', price: 15.50 },
+  { category: 'Other Entrees', name: 'Falafel Wrap (V)', desc: 'Falafel, Hummus, Blue Chz., Buff Sauce, L,T, Cukes.', price: 12.50 },
   { category: 'Other Entrees', name: 'Wings', desc: '10 wings $15.99 / 20 wings $29.99. Buffalo, AJ\'s Sweet Hot, Lemon Pepper, Jerk', price: 15.99 },
 
   // Sides
-  { category: 'Sides', name: 'Fries', desc: 'Hand-cut French fries', price: 5.00 },
+  { category: 'Sides', name: 'Fries', desc: 'Hand-cut French fries', price: 5.25 },
   { category: 'Sides', name: 'Slaw', desc: 'Fresh coleslaw', price: 3.00 },
   { category: 'Sides', name: 'Cup O\' Salad', desc: 'Fresh garden salad', price: 3.00 },
   { category: 'Sides', name: 'Tots', desc: 'The darn well worth a little more sides', price: 5.50 },
-  { category: 'Sides', name: 'Broccoli', desc: 'Fresh steamed broccoli', price: 4.00 },
-  { category: 'Sides', name: 'Green Beans', desc: 'Fresh steamed green beans', price: 5.00 },
+  { category: 'Sides', name: 'Broccoli', desc: 'The darn well worth a little more sides', price: 5.25 },
   { category: 'Sides', name: 'Mac \'n\' Cheese', desc: 'Creamy mac and cheese', price: 6.00 },
-  { category: 'Sides', name: 'Fresh Fried Okra', desc: 'If avail. - The darn well worth a little more sides', price: 6.00 },
+  { category: 'Sides', name: 'Tempura Brussels', desc: 'The darn well worth a little more sides', price: 6.00 },
 ]
 
 export default function MenuPage() {
@@ -142,8 +143,8 @@ export default function MenuPage() {
       {/* Food Menu */}
       {foodCategories.map(category => {
         const categoryItems = menuItems.filter(item => item.category === category);
-        const mainItems = categoryItems.filter(item => !item.name.includes('Add') && !item.name.includes('Make it'));
-        const addOnItems = categoryItems.filter(item => item.name.includes('Add') || item.name.includes('Make it'));
+        const mainItems = categoryItems.filter(item => !item.name.includes('Add') && !item.name.includes('Make it') && !item.name.startsWith('Sub '));
+        const addOnItems = categoryItems.filter(item => item.name.includes('Add') || item.name.includes('Make it') || item.name.startsWith('Sub '));
         
         const categoryId = category.toLowerCase().replace(/\s+/g, '-').replace(/[&*]/g, '')
         return (
@@ -187,10 +188,13 @@ export default function MenuPage() {
       })}
 
       {/* Disclaimer */}
-      <div className="bg-light-cream p-6 rounded-lg border border-light-gray mb-8">
+      <div className="bg-light-cream p-6 rounded-lg border border-light-gray mb-8 space-y-2">
         <p className="text-sm text-gray-600 text-center">
           <strong>*</strong> Dekalb County would like you to know that eating undercooked meat can lead to foodborne illness. 
-          So can undercooked shellfish, but if you're having that, you're in another restaurant.
+          So can undercooked shellfish, but if you're having that, you're in another restaurant. Sesame is now an allergen (we use sesame seed buns occasionally).
+        </p>
+        <p className="text-sm text-gray-600 text-center font-medium">
+          Prices are for cards. Use cash for a 4% discount!
         </p>
       </div>
       </div>
