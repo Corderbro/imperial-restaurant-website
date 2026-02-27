@@ -7,15 +7,15 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-95 backdrop-blur-sm border-b border-soft-gray shadow-sm">
-      <div className="mx-auto max-w-7xl px-4 py-4 flex justify-between items-center">
+      <div className="mx-auto max-w-7xl px-3 md:px-4 py-2 md:py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center hover:opacity-90 transition-all duration-300 hover:scale-105">
-          <div className="bg-white p-3 rounded-lg shadow-md border border-gray-100">
+          <div className="bg-white p-2 md:p-3 rounded-lg shadow-md border border-gray-100">
             <Image 
-              src="/ImperialLogo.png" 
+              src="/ImperialLogo2.jpg" 
               alt="The Imperial" 
-              width={200} 
-              height={60} 
-              className="h-14 w-auto"
+              width={240} 
+              height={72} 
+              className="h-16 md:h-20 w-auto"
               priority
             />
           </div>
@@ -23,21 +23,17 @@ export default function Header() {
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-8">
-          <Link href="/menu" className="text-dark hover:text-neon-red transition-all duration-300 font-medium uppercase tracking-wider text-sm relative group">
+          <Link href="/menu" className="text-dark transition-all duration-300 font-medium uppercase tracking-wider text-sm relative group" style={{ '--hover-color': '#A4343A' } as React.CSSProperties} onMouseEnter={(e) => e.currentTarget.style.color = '#A4343A'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
             Menu
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-red transition-all duration-300 group-hover:w-full"></span>
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full" style={{ backgroundColor: '#A4343A' }}></span>
           </Link>
-          <Link href="/story" className="text-dark hover:text-neon-red transition-all duration-300 font-medium uppercase tracking-wider text-sm relative group">
+          <Link href="/story" className="text-dark transition-all duration-300 font-medium uppercase tracking-wider text-sm relative group" onMouseEnter={(e) => e.currentTarget.style.color = '#A4343A'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
             Story & Events
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-red transition-all duration-300 group-hover:w-full"></span>
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full" style={{ backgroundColor: '#A4343A' }}></span>
           </Link>
-          <Link href="/about" className="text-dark hover:text-neon-red transition-all duration-300 font-medium uppercase tracking-wider text-sm relative group">
-            About
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-red transition-all duration-300 group-hover:w-full"></span>
-          </Link>
-          <Link href="/contact" className="text-dark hover:text-neon-red transition-all duration-300 font-medium uppercase tracking-wider text-sm relative group">
+          <Link href="/contact" className="text-dark transition-all duration-300 font-medium uppercase tracking-wider text-sm relative group" onMouseEnter={(e) => e.currentTarget.style.color = '#A4343A'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
             Contact & Hours
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-red transition-all duration-300 group-hover:w-full"></span>
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full" style={{ backgroundColor: '#A4343A' }}></span>
           </Link>
         </nav>
 
@@ -45,7 +41,9 @@ export default function Header() {
         <div className="md:hidden">
           <button 
             aria-label="Open menu" 
-            className="text-dark p-3 hover:text-neon-red transition-colors rounded-lg hover:bg-gray-100 min-h-[44px] min-w-[44px] flex items-center justify-center"
+            className="text-dark p-3 transition-colors rounded-lg hover:bg-gray-100 min-h-[44px] min-w-[44px] flex items-center justify-center"
+            onMouseEnter={(e) => e.currentTarget.style.color = '#A4343A'}
+            onMouseLeave={(e) => e.currentTarget.style.color = ''}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -65,28 +63,27 @@ export default function Header() {
           <nav className="px-4 py-6 space-y-2">
             <Link 
               href="/menu" 
-              className="block text-dark hover:text-neon-red transition-colors font-medium uppercase tracking-wider text-sm py-4 px-4 rounded-lg hover:bg-gray-50 min-h-[44px] flex items-center"
+              className="block text-dark transition-colors font-medium uppercase tracking-wider text-sm py-4 px-4 rounded-lg hover:bg-gray-50 min-h-[44px] flex items-center"
+              onMouseEnter={(e) => e.currentTarget.style.color = '#A4343A'}
+              onMouseLeave={(e) => e.currentTarget.style.color = ''}
               onClick={() => setIsMenuOpen(false)}
             >
               Menu
             </Link>
             <Link 
               href="/story" 
-              className="block text-dark hover:text-neon-red transition-colors font-medium uppercase tracking-wider text-sm py-4 px-4 rounded-lg hover:bg-gray-50 min-h-[44px] flex items-center"
+              className="block text-dark transition-colors font-medium uppercase tracking-wider text-sm py-4 px-4 rounded-lg hover:bg-gray-50 min-h-[44px] flex items-center"
+              onMouseEnter={(e) => e.currentTarget.style.color = '#A4343A'}
+              onMouseLeave={(e) => e.currentTarget.style.color = ''}
               onClick={() => setIsMenuOpen(false)}
             >
               Story & Events
             </Link>
             <Link 
-              href="/about" 
-              className="block text-dark hover:text-neon-red transition-colors font-medium uppercase tracking-wider text-sm py-4 px-4 rounded-lg hover:bg-gray-50 min-h-[44px] flex items-center"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              About
-            </Link>
-            <Link 
               href="/contact" 
-              className="block text-dark hover:text-neon-red transition-colors font-medium uppercase tracking-wider text-sm py-4 px-4 rounded-lg hover:bg-gray-50 min-h-[44px] flex items-center"
+              className="block text-dark transition-colors font-medium uppercase tracking-wider text-sm py-4 px-4 rounded-lg hover:bg-gray-50 min-h-[44px] flex items-center"
+              onMouseEnter={(e) => e.currentTarget.style.color = '#A4343A'}
+              onMouseLeave={(e) => e.currentTarget.style.color = ''}
               onClick={() => setIsMenuOpen(false)}
             >
               Contact & Hours

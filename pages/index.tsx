@@ -6,15 +6,18 @@ export default function Home() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Video */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0" style={{ top: '-180px' }}>
           <video 
             autoPlay 
             muted 
             loop 
             playsInline
             className="w-full h-full object-cover"
+            style={{
+              objectPosition: 'center top',
+            }}
           >
             <source src="/impNeonFlicker.mp4" type="video/mp4" />
             {/* Fallback image in case video doesn't load */}
@@ -23,6 +26,9 @@ export default function Home() {
               alt="The Imperial Restaurant" 
               fill
               className="object-cover"
+              style={{
+                objectPosition: 'center top',
+              }}
               priority
             />
           </video>
@@ -30,37 +36,37 @@ export default function Home() {
         </div>
         
         {/* Hero Content */}
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-auto mb-20">
-          <p className="text-2xl font-light text-white mb-4 italic slide-in-left">
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col justify-center items-center min-h-screen py-12 md:py-20" style={{ marginTop: '100px' }}>
+          <p className="text-lg md:text-2xl font-light text-white mb-3 md:mb-4 italic slide-in-left px-2">
             Your New Old Favorite
           </p>
-          <p className="body-text text-white mb-8 max-w-2xl mx-auto slide-in-right">
+          <p className="text-sm md:text-lg text-white mb-6 md:mb-8 max-w-2xl mx-auto slide-in-right px-4 leading-relaxed">
             Handcrafted cocktails. Timeless tracks. Your table's waiting.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center fade-in">
-            <Link href="/menu" className="btn-primary shimmer">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center fade-in w-full px-4 mt-4">
+            <Link href="/menu" className="btn-primary shimmer text-center">
               View Our Menu
             </Link>
-            <Link href="/story" className="btn-primary shimmer">
+            <Link href="/story" className="btn-primary shimmer text-center">
               See What's Happening
             </Link>
           </div>
         </div>
 
         {/* Floating accent elements */}
-        <div className="absolute top-20 left-10 w-4 h-4 bg-neon-red rounded-full opacity-60 float" style={{animationDelay: '0s'}}></div>
-        <div className="absolute top-40 right-20 w-3 h-3 bg-neon-yellow rounded-full opacity-60 float" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-20 left-10 w-4 h-4 rounded-full opacity-60 float" style={{animationDelay: '0s', backgroundColor: '#A4343A' }}></div>
+        <div className="absolute top-40 right-20 w-3 h-3 rounded-full opacity-60 float" style={{animationDelay: '1s', backgroundColor: '#FFD93D' }}></div>
         <div className="absolute bottom-40 left-20 w-2 h-2 bg-gold rounded-full opacity-60 float" style={{animationDelay: '2s'}}></div>
       </section>
 
 
 
       {/* Photo Gallery Section */}
-      <section className="py-20 px-4 bg-soft-gray">
+      <section className="py-12 px-4 bg-off-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12 fade-in">
-            <h2 className="heading-lg text-dark mb-4 text-gradient">Experience The Imperial</h2>
+          <div className="text-center mb-8 fade-in">
+            <h2 className="heading-lg mb-4" style={{ color: '#A4343A' }}>Experience The Imperial</h2>
             <p className="body-text text-warm-gray">Take a look at what makes our neighborhood bar special.</p>
           </div>
           
@@ -164,108 +170,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Event Section */}
-      <section className="py-20 px-4 bg-cream">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12 fade-in">
-            <h2 className="heading-lg text-dark mb-4 text-gradient">This Week at The Imperial</h2>
-            <p className="body-text text-warm-gray">Join us for unforgettable nights filled with great food, craft beer, and even better company.</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="card-dark text-center hover-lift" style={{animationDelay: '0.1s'}}>
-              <div className="text-neon-red font-bold text-lg mb-2 neon-pulse">Monday</div>
-              <h3 className="font-semibold mb-2 text-dark">Robert Holland Trivia</h3>
-              <p className="text-sm text-warm-gray mb-4">7:00 PM - Test your knowledge with the best bar trivia in Decatur</p>
-              <Link href="/story" className="text-neon-red hover:text-neon-yellow transition-colors text-sm font-semibold">
-                Learn More
-              </Link>
-            </div>
-            
-            <div className="card-dark text-center hover-lift" style={{animationDelay: '0.2s'}}>
-              <div className="text-neon-yellow font-bold text-lg mb-2 neon-pulse">Friday</div>
-              <h3 className="font-semibold mb-2 text-dark">Weekend Vibes</h3>
-              <p className="text-sm text-warm-gray mb-4">Live music and extended hours until midnight</p>
-              <Link href="/story" className="text-neon-red hover:text-neon-yellow transition-colors text-sm font-semibold">
-                Learn More
-              </Link>
-            </div>
-            
-            <div className="card-dark text-center hover-lift" style={{animationDelay: '0.3s'}}>
-              <div className="text-gold font-bold text-lg mb-2 neon-pulse">Sunday</div>
-              <h3 className="font-semibold mb-2 text-dark">Game Day Specials</h3>
-              <p className="text-sm text-warm-gray mb-4">Watch the game with great food and drink specials</p>
-              <Link href="/story" className="text-neon-red hover:text-neon-yellow transition-colors text-sm font-semibold">
-                Learn More
-        </Link>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Hours Preview */}
-      <section className="py-20 px-4 bg-soft-gray">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="heading-lg text-dark mb-12 text-gradient">Visit Us</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="text-left slide-in-left">
-              <h3 className="heading-md text-neon-red mb-6">Hours</h3>
-              <div className="space-y-3 text-warm-gray">
-                <div className="flex justify-between hover-lift p-2 rounded">
-                  <span className="font-medium">Monday:</span>
-                  <span>4:00 PM - 11:00 PM</span>
-                </div>
-                <div className="flex justify-between hover-lift p-2 rounded">
-                  <span className="font-medium">Tuesday - Thursday:</span>
-                  <span>12:00 PM - 11:00 PM</span>
-                </div>
-                <div className="flex justify-between hover-lift p-2 rounded">
-                  <span className="font-medium">Friday - Saturday:</span>
-                  <span>12:00 PM - 12:00 AM</span>
-                </div>
-                <div className="flex justify-between hover-lift p-2 rounded">
-                  <span className="font-medium">Sunday:</span>
-                  <span>12:00 PM - 11:00 PM</span>
-                </div>
-              </div>
-              <p className="text-sm text-warm-gray mt-4 italic">* Kitchen closes one hour before bar closing time</p>
-            </div>
-            
-            <div className="text-left slide-in-right">
-              <h3 className="heading-md text-neon-yellow mb-6">Location</h3>
-              <div className="space-y-4 text-warm-gray">
-                <p className="body-text hover-lift">
-                  726 W. College Avenue<br />
-                  Decatur, GA 30030
-                </p>
-                <p className="body-text hover-lift">
-                  (404) 464-5698
-                </p>
-                <div className="space-y-2">
-                  <a href="https://www.facebook.com/ImperialDecatur/" className="block text-neon-red hover:text-neon-yellow transition-colors hover-lift font-medium">
-                    Facebook
-                  </a>
-                  <a href="https://www.instagram.com/theimperialoakhurst/" className="block text-neon-red hover:text-neon-yellow transition-colors hover-lift font-medium">
-                    Instagram
-                  </a>
-                  <a href="https://untappd.com/v/the-imperial/1224591" className="block text-neon-red hover:text-neon-yellow transition-colors hover-lift font-medium">
-                    Untappd
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
 
 
       {/* Social Proof Section */}
-      <section className="py-20 px-4 bg-cream">
+      <section className="py-12 px-4 bg-light-cream">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="heading-lg text-dark mb-8 text-gradient">Follow Our Story</h2>
-          <p className="body-text text-warm-gray mb-8 fade-in">
+          <h2 className="heading-lg mb-6" style={{ color: '#A4343A' }}>Follow Our Story</h2>
+          <p className="body-text text-warm-gray mb-6 fade-in">
             See what's happening at The Imperial through the eyes of our community.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

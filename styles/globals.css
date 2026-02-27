@@ -2,53 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Color palette - Light theme */
+/* Color palette - Refined Imperial Theme */
 :root {
-  --imperial-neon-red: #dc2626;
-  --imperial-neon-yellow: #fbbf24;
-  --imperial-dark: #1f2937;
-  --imperial-charcoal: #374151;
+  --imperial-red: #A4343A;
+  --imperial-red-dark: #6B1E23;
+  --imperial-champagne-gold: #D4B896;
+  --imperial-warm-gold: #C9A66B;
+  --imperial-neon-yellow: #FFD93D;
+  --imperial-charcoal: #1F2937;
+  --imperial-deep-navy: #1E3A5F;
   --imperial-warm-gray: #6b7280;
-  --imperial-light-gray: #9ca3af;
-  --imperial-gold: #d97706;
-  --imperial-brick: #b91c1c;
-  --imperial-cream: #fef7f0;
-  --imperial-warm-white: #fafaf9;
+  --imperial-light-gray: #E5E7EB;
+  --imperial-off-white: #FAFAF9;
+  --imperial-light-cream: #F5EFE7;
+  --imperial-dark: #1f2937;
   --imperial-soft-gray: #f3f4f6;
-  --imperial-accent: #f59e0b;
 }
 
 /* Base styles */
 html, body, #__next {
-  background-color: var(--imperial-warm-white);
+  background-color: var(--imperial-off-white);
   color: var(--imperial-dark);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   scroll-behavior: smooth;
 }
 
 /* Custom utility classes */
-.text-neon-red { color: var(--imperial-neon-red); }
+.text-imperial-red { color: var(--imperial-red); }
+.text-champagne-gold { color: var(--imperial-champagne-gold); }
+.text-warm-gold { color: var(--imperial-warm-gold); }
 .text-neon-yellow { color: var(--imperial-neon-yellow); }
 .text-dark { color: var(--imperial-dark); }
 .text-charcoal { color: var(--imperial-charcoal); }
 .text-warm-gray { color: var(--imperial-warm-gray); }
 .text-light-gray { color: var(--imperial-light-gray); }
-.text-gold { color: var(--imperial-gold); }
-.text-brick { color: var(--imperial-brick); }
-.text-accent { color: var(--imperial-accent); }
 
-.bg-dark { background-color: var(--imperial-dark); }
+/* Legacy support - map old classes to new colors */
+.text-neon-red { color: var(--imperial-red); }
+.text-gold { color: var(--imperial-champagne-gold); }
+.text-brick { color: var(--imperial-red-dark); }
+.text-accent { color: var(--imperial-champagne-gold); }
+
+.bg-imperial-red { background-color: var(--imperial-red); }
+.bg-champagne-gold { background-color: var(--imperial-champagne-gold); }
+.bg-warm-gold { background-color: var(--imperial-warm-gold); }
 .bg-charcoal { background-color: var(--imperial-charcoal); }
+.bg-deep-navy { background-color: var(--imperial-deep-navy); }
 .bg-warm-gray { background-color: var(--imperial-warm-gray); }
 .bg-light-gray { background-color: var(--imperial-light-gray); }
-.bg-cream { background-color: var(--imperial-cream); }
-.bg-warm-white { background-color: var(--imperial-warm-white); }
+.bg-light-cream { background-color: var(--imperial-light-cream); }
+.bg-off-white { background-color: var(--imperial-off-white); }
+.bg-warm-white { background-color: var(--imperial-off-white); }
 .bg-soft-gray { background-color: var(--imperial-soft-gray); }
-.bg-accent { background-color: var(--imperial-accent); }
+.bg-cream { background-color: var(--imperial-light-cream); }
+.bg-dark { background-color: var(--imperial-charcoal); }
+.bg-accent { background-color: var(--imperial-champagne-gold); }
 
-.border-neon-red { border-color: var(--imperial-neon-red); }
+.border-imperial-red { border-color: var(--imperial-red); }
+.border-champagne-gold { border-color: var(--imperial-champagne-gold); }
+.border-warm-gold { border-color: var(--imperial-warm-gold); }
+.border-neon-red { border-color: var(--imperial-red); }
 .border-warm-gray { border-color: var(--imperial-warm-gray); }
 .border-charcoal { border-color: var(--imperial-charcoal); }
+.border-light-gray { border-color: var(--imperial-light-gray); }
 
 /* Enhanced neon text effect */
 .neon-text {
@@ -250,6 +266,28 @@ button:focus, a:focus, input:focus, textarea:focus {
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(44, 62, 80, 0.4);
+  min-width: 200px;
+  min-height: 44px;
+}
+
+@media (max-width: 640px) {
+  .btn-primary {
+    width: 100%;
+    max-width: 280px;
+    padding: 14px 20px;
+    font-size: 14px;
+    margin: 0 auto;
+  }
+}
+
+/* Hide scrollbar for sticky menu */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
 .btn-primary::before {
