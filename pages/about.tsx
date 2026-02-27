@@ -102,8 +102,8 @@ export default function About() {
             </div>
             
             <div className="bg-gradient-to-br from-red-50 to-pink-50 p-6 rounded-xl border border-red-200 text-center hover:shadow-lg transition-all duration-300">
-              <h3 className="font-bold text-red-700 mb-2">Happy Hour</h3>
-              <p className="text-sm text-gray-600">4-6 PM & 10-12 AM</p>
+              <h3 className="font-bold text-red-700 mb-2">Specials</h3>
+              <p className="text-sm text-gray-600">Ask your server for today's offerings</p>
             </div>
             
             <div className="bg-gradient-to-br from-green-50 to-blue-50 p-6 rounded-xl border border-green-200 text-center hover:shadow-lg transition-all duration-300">

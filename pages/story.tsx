@@ -19,11 +19,11 @@ export default function Story() {
       description: "Friendlier...Younger? DJ Blaq Mozart brings the trivia fun"
     },
     {
-      day: "Happy Hour",
-      title: "Drink and App Specials",
-      time: "Mon-Fri 4-6 PM & 10-12 AM",
+      day: "Specials",
+      title: "Food & Drink Features",
+      time: "Ask your server for today's offerings",
       color: "text-neon-blue",
-      description: "Great deals on craft beer, cocktails, and appetizers"
+      description: "Rotating food and drink features available throughout the week."
     }
   ]
 
@@ -145,7 +145,7 @@ export default function Story() {
                   </div>
                   <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
                     <span className="text-neon-red text-xl">✓</span>
-                    <span className="font-medium text-gray-800">Corporate happy hours</span>
+                    <span className="font-medium text-gray-800">Corporate events</span>
                   </div>
                   <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
                     <span className="text-neon-red text-xl">✓</span>
