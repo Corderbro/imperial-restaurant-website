@@ -90,7 +90,7 @@ export default function About() {
         {/* Events & Specials Section */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold mb-8 text-center">Events & Specials</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-200 text-center hover:shadow-lg transition-all duration-300">
               <h3 className="font-bold text-purple-700 mb-2">Monday Trivia</h3>
               <p className="text-sm text-gray-600">8:00 PM</p>
@@ -99,11 +99,6 @@ export default function About() {
             <div className="bg-gradient-to-br from-yellow-50 to-orange-50 p-6 rounded-xl border border-yellow-200 text-center hover:shadow-lg transition-all duration-300">
               <h3 className="font-bold text-yellow-700 mb-2">Tuesday Trivia</h3>
               <p className="text-sm text-gray-600">8:00 PM</p>
-            </div>
-            
-            <div className="bg-gradient-to-br from-red-50 to-pink-50 p-6 rounded-xl border border-red-200 text-center hover:shadow-lg transition-all duration-300">
-              <h3 className="font-bold text-red-700 mb-2">Happy Hour</h3>
-              <p className="text-sm text-gray-600">4-6 PM & 10-12 AM</p>
             </div>
             
             <div className="bg-gradient-to-br from-green-50 to-blue-50 p-6 rounded-xl border border-green-200 text-center hover:shadow-lg transition-all duration-300">
