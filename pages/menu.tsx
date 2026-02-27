@@ -61,86 +61,11 @@ const menuItems = [
   { category: 'Sides', name: 'Fresh Fried Okra', desc: 'If avail. - The darn well worth a little more sides', price: 6.00 },
 ]
 
-const beverageItems = [
-  // Bottled & Canned Beverages
-  { category: 'Bottled & Canned Beverages', name: 'Miller High Life', desc: '16oz - The Champagne of canned beers.', price: 4.50 },
-  { category: 'Bottled & Canned Beverages', name: 'Stella Artois', desc: '12oz - The tall-boy of Brussels.', price: 5.50 },
-  { category: 'Bottled & Canned Beverages', name: 'Budweiser...Heavy or Light', desc: '16oz - The canned pride of Brussels, formerly of St. Louis.', price: 4.50 },
-  { category: 'Bottled & Canned Beverages', name: 'Miller Lite', desc: '16oz - It done come first.', price: 4.50 },
-  { category: 'Bottled & Canned Beverages', name: 'Natural Light', desc: '16oz - For when, whoa! That Bud Light is just a little too much!', price: 4.50 },
-  { category: 'Bottled & Canned Beverages', name: 'Amstel Light', desc: '12oz - Can of the slim Dutch people.', price: 5.50 },
-  { category: 'Bottled & Canned Beverages', name: 'Michelob Ultra', desc: '16oz - Can of the swanky, slim \'Murcan people.', price: 5.50 },
-  { category: 'Bottled & Canned Beverages', name: 'Pabst Blue Ribbon!', desc: '16oz - The can for the ages.', price: 3.25 },
-  { category: 'Bottled & Canned Beverages', name: 'Yuengling', desc: '16oz - The caramel-colored Budweiser.', price: 4.50 },
-  { category: 'Bottled & Canned Beverages', name: 'Lone Star', desc: '12oz - The Longhorn Longneck.', price: 5.00 },
-  { category: 'Bottled & Canned Beverages', name: 'Coronita', desc: '7oz - The Leetle Bitty Version.', price: 4.00 },
-  { category: 'Bottled & Canned Beverages', name: 'Imperial Lager', desc: '12oz - Central American lager that has our name right on it.', price: 5.50 },
-  { category: 'Bottled & Canned Beverages', name: 'Negra Modelo', desc: '12oz', price: 5.50 },
-  { category: 'Bottled & Canned Beverages', name: 'Sierra Trail Pass N.A. IPA', desc: '12oz - You\'d never know it was N.A. So pay attention to the can.', price: 5.50 },
-  { category: 'Bottled & Canned Beverages', name: 'Athletic: Hazy N.A. IPA & N.A. Lager', desc: '12oz - They\'re Californian, they love the trails and they brew NA.', price: 5.50 },
-  { category: 'Bottled & Canned Beverages', name: 'Guinness N.A.', desc: '14oz - It\'ll purt near fool ya.', price: 6.50 },
-  { category: 'Bottled & Canned Beverages', name: 'Weihenstephaner N.A.', desc: '12oz - A gefälscht Hefeweizen.', price: 6.00 },
-  { category: 'Bottled & Canned Beverages', name: 'La Chouffe N.A.', desc: '11oz - The Belgian Pale Ale of your NA dreams.', price: 8.00 },
-  { category: 'Bottled & Canned Beverages', name: '3 Taverns Night On Ponce IPA', desc: '16oz - What\'s a night on Ponce means to you? 7.5%.', price: 7.00 },
-  { category: 'Bottled & Canned Beverages', name: 'Bell\'s Two Hearted IPA', desc: '16oz - A great IPA-style ale from MI. 7%.', price: 7.00 },
-  { category: 'Bottled & Canned Beverages', name: 'Sierra Nevada Pale Ale', desc: '16oz - The classic original. 5.6%.', price: 6.00 },
-  { category: 'Bottled & Canned Beverages', name: 'Daytime IPA', desc: '12oz - Low-grav goodness from Lagunitas. 4%.', price: 5.50 },
-  { category: 'Bottled & Canned Beverages', name: 'Sweetwater 420', desc: '16oz - They used to be a micro once-upon-a-time. 5.7%.', price: 6.00 },
-  { category: 'Bottled & Canned Beverages', name: 'Duchesse de Bourgogne', desc: '11oz - Flanders Red Sour. 6%.', price: 10.00 },
-  { category: 'Bottled & Canned Beverages', name: '3 Taverns Rapturous Raspberry Sour', desc: '12oz - From the Sour Asylum Series and dang popular. 5%.', price: 6.00 },
-  { category: 'Bottled & Canned Beverages', name: 'Schneider Weisse Tap 7', desc: '16.9oz - The grandaddy of German wheat beers 5.4%.', price: 10.00 },
-  { category: 'Bottled & Canned Beverages', name: 'Schneider Aventinus', desc: '16.9oz - Schneider\'s Hefe-Weizenbock. 8.2%.', price: 10.50 },
-  { category: 'Bottled & Canned Beverages', name: 'La Chouffe', desc: '11oz - The Belgian Strong Pale Ale of your dreams 8%.', price: 8.00 },
-  { category: 'Bottled & Canned Beverages', name: 'Victory Golden Monkey Tripel', desc: '12oz - A tripel from the PA Brewing titans. 9.5% of greatness.', price: 6.50 },
-  { category: 'Bottled & Canned Beverages', name: 'Blake\'s El Chavo Cider', desc: '12oz - Infused with Habañero & Mango. 6.5%.', price: 5.50 },
-  { category: 'Bottled & Canned Beverages', name: 'Long Drink...Reg, Peach, SF Citrus', desc: '12oz - Fiendishly clever Finnish can gin, grapefruit and juniper. Yum! 5.5% OR they stuff peaches in! 5% OR Sugar Free.', price: 7.50 },
-  { category: 'Bottled & Canned Beverages', name: 'White Claw', desc: '12oz - We\'re told they\'re popular with you young folks. 5%.', price: 5.50 },
-  { category: 'Bottled & Canned Beverages', name: 'Bravazzi Italian Hard Soda', desc: '12oz - Various delightful, sunny flavors...all 4.2%.', price: 6.00 },
-
-  // Red Wine
-  { category: 'Red Wine', name: 'La Nevera Gran Vino Tinto', desc: 'España', price: 6.50 },
-  { category: 'Red Wine', name: 'Domain La Berthéte Côtê du Rhône', desc: 'France - Glass $11 / Bottle $42', price: 11.00 },
-  { category: 'Red Wine', name: '12 e mezzo Primitivo del Salento', desc: 'Italy - Glass $10.5 / Bottle $40', price: 10.50 },
-  { category: 'Red Wine', name: 'Pillo de Panama Cab/Syr./Malbec', desc: 'Chile - Glass $10.5 / Bottle $40', price: 10.50 },
-  { category: 'Red Wine', name: 'Sierra Batuco Reserva Pinot Noir', desc: 'Chile - Glass $10 / Bottle $36', price: 10.00 },
-
-  // White Wine
-  { category: 'White Wine', name: 'House White', desc: 'Spain', price: 5.00 },
-  { category: 'White Wine', name: '12 e mezzo Chardonnay', desc: 'Puglia - Glass $10 / Bottle $38', price: 10.00 },
-  { category: 'White Wine', name: 'Moretta Les Espias Chenin Blanc', desc: 'Chile - Glass $10 / Bottle $38', price: 10.00 },
-  { category: 'White Wine', name: 'Reynaud Lacoste Sauv Blanc', desc: 'Bordeaux - Glass $9 / Bottle $34', price: 9.00 },
-  { category: 'White Wine', name: 'Montasolo Pinot Grigio', desc: 'Delle Venezie - Glass $8 / Bottle $30', price: 8.00 },
-  { category: 'White Wine', name: 'Getrank Grüner Veltliner', desc: 'Austria - Glass $9 / Bottle $40 (1L)', price: 9.00 },
-  { category: 'White Wine', name: 'Vera Vinho Verde Rosé', desc: 'Portugal - Glass $9 / Bottle $34', price: 9.00 },
-  { category: 'White Wine', name: 'Los Monteros Cava', desc: 'Requena, España - Glass $9 / Bottle $34', price: 9.00 },
-  { category: 'White Wine', name: 'Los Monteros Rose Cava', desc: 'Requena, España - Glass $9 / Bottle $34', price: 9.00 },
-]
-
-const draftItems = [
-  // Draft Beer & Cider
-  { category: 'Draft Beer & Cider', name: 'Abita Root Beer', desc: 'You know...for the kids.', price: 3.00 },
-  { category: 'Draft Beer & Cider', name: 'The Beer We Got', desc: 'Cheap - Pint $3 / Pitcher $10', price: 3.00 },
-  { category: 'Draft Beer & Cider', name: 'Mercier Grumpy Granny Cider', desc: 'From N. GA. 6.6% - Pint $6 / Pitcher $23', price: 6.00 },
-  { category: 'Draft Beer & Cider', name: 'Weihenstephaner Hefe Weis Bier', desc: '5.4% - Pint $6.5 / Pitcher $7.5 (.5L)', price: 6.50 },
-  { category: 'Draft Beer & Cider', name: 'Reissdorf Kölsch', desc: '4.8% - Pint $6 / Pitcher $23', price: 6.00 },
-  { category: 'Draft Beer & Cider', name: 'Classic City Lager', desc: '4.2% - Pint $5.5 / Pitcher $21', price: 5.50 },
-  { category: 'Draft Beer & Cider', name: 'Guinness Stout', desc: '4.2% - Imperial Pint $7', price: 7.00 },
-  { category: 'Draft Beer & Cider', name: 'Founders Porter', desc: '6.5% - Pint $6 / Pitcher $23', price: 6.00 },
-  { category: 'Draft Beer & Cider', name: 'Back 40 Naked Pig Pale Ale', desc: '6% - Pint $6 / Pitcher $23', price: 6.00 },
-  { category: 'Draft Beer & Cider', name: 'Lagunitas IPA', desc: '6.2% - Pint $5.5 / Pitcher $21', price: 5.50 },
-  { category: 'Draft Beer & Cider', name: 'CCBC Tropicalia', desc: '6.6% - Pint $7 / Pitcher $27', price: 7.00 },
-  { category: 'Draft Beer & Cider', name: 'Sierra Hazy Little Thing', desc: '6.7% - Pint $6 / Pitcher $23', price: 6.00 },
-]
-
 export default function MenuPage() {
   const foodCategories = [...new Set(menuItems.map(item => item.category))]
-  const beverageCategories = [...new Set(beverageItems.map(item => item.category))]
-  const draftCategories = [...new Set(draftItems.map(item => item.category))]
   
   const allCategories = [
     ...foodCategories.map(cat => ({ name: cat, type: 'food', id: cat.toLowerCase().replace(/\s+/g, '-').replace(/[&*]/g, '') })),
-    ...beverageCategories.map(cat => ({ name: cat, type: 'beverage', id: cat.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, '') })),
-    ...draftCategories.map(cat => ({ name: cat, type: 'draft', id: cat.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, '') }))
   ]
   
   const [showScrollTop, setShowScrollTop] = useState(false)
@@ -260,62 +185,6 @@ export default function MenuPage() {
           </div>
         );
       })}
-
-      {/* Beverage Menu */}
-      {beverageCategories.map(category => {
-        const categoryId = category.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, '')
-        return (
-          <div key={category} id={categoryId} className="mb-8 scroll-mt-24">
-          <div className="border-b-2 pb-2 mb-6" style={{ borderColor: '#D4B896' }}>
-            <h2 className="text-3xl font-bold" style={{ color: '#A4343A' }}>{category}</h2>
-          </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {beverageItems
-                .filter(item => item.category === category)
-                .map((item, i) => (
-                  <div key={i} className="bg-light-cream border border-light-gray p-6 rounded-lg hover:shadow-lg transition-all duration-200 hover:border-champagne-gold">
-                    <div className="flex justify-between items-start mb-2">
-                      <h3 className="text-xl font-semibold text-gray-800">{item.name}</h3>
-                      <div className="text-xl font-bold" style={{ color: '#A4343A' }}>${item.price.toFixed(2)}</div>
-                    </div>
-                    <p className="text-gray-600 text-sm italic">{item.desc}</p>
-                  </div>
-                ))}
-            </div>
-          </div>
-        )
-      })}
-
-      {/* Draft Menu */}
-      {draftCategories.map(category => {
-        const categoryId = category.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, '')
-        return (
-          <div key={category} id={categoryId} className="mb-8 scroll-mt-24">
-            <div className="border-b-2 pb-2 mb-6" style={{ borderColor: '#D4B896' }}>
-              <h2 className="text-3xl font-bold" style={{ color: '#A4343A' }}>{category}</h2>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {draftItems
-                .filter(item => item.category === category)
-                .map((item, i) => (
-                  <div key={i} className="bg-light-cream border border-light-gray p-6 rounded-lg hover:shadow-lg transition-all duration-200 hover:border-champagne-gold">
-                    <div className="flex justify-between items-start mb-2">
-                      <h3 className="text-xl font-semibold text-gray-800">{item.name}</h3>
-                      <div className="text-xl font-bold" style={{ color: '#A4343A' }}>${item.price.toFixed(2)}</div>
-                    </div>
-                    <p className="text-gray-600 text-sm italic">{item.desc}</p>
-                  </div>
-                ))}
-            </div>
-          </div>
-        )
-      })}
-      
-
-
-
 
       {/* Disclaimer */}
       <div className="bg-light-cream p-6 rounded-lg border border-light-gray mb-8">
