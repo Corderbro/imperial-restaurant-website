@@ -1,5 +1,4 @@
 import Layout from '../components/Layout'
-import SEOHead from '../components/SEOHead'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -29,14 +28,7 @@ export default function Story() {
   ]
 
   return (
-    <>
-      <SEOHead 
-        title="Story & Events | The Imperial Decatur"
-        description="Join us for Trivia every Monday and Tuesday at 8pm! Learn about The Imperial's history as a converted 1920s service station in Decatur, GA."
-        canonical="/story"
-        pageType="about"
-      />
-      <Layout>
+    <Layout>
         {/* Page Header */}
         <section className="py-24 px-4 bg-white">
           <div className="max-w-6xl mx-auto text-center">
@@ -182,7 +174,6 @@ export default function Story() {
           </section>
 
         </div>
-      </Layout>
-    </>
+    </Layout>
   )
 }
